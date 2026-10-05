@@ -1,0 +1,1785 @@
+{
+  "metadata": {
+    "facility_key": "methode",
+    "facility_info": {
+      "facility": "Methode Electronics Planta 2",
+      "location": "Apodaca, Monterrey, NL, Mexico",
+      "coordinates": {
+        "lat": 25.78,
+        "lon": -100.13
+      },
+      "bbox": [
+        -100.138,
+        25.775,
+        -100.122,
+        25.785
+      ]
+    },
+    "last_updated": "2026-10-03 13:48:40 UTC",
+    "backfill_days": 42,
+    "data_source_mode": "100% Real Live STAC API + Official SEC / Registry Filings"
+  },
+  "sec_telemetry": {
+    "company_name": "METHODE ELECTRONICS INC",
+    "ticker": "MEI",
+    "cik": "0000065270",
+    "sic_description": "Electronic Connectors",
+    "latest_inventory_usd": 184600000.0,
+    "latest_quarterly_revenue_usd": 908300000.0,
+    "recent_sec_filings": [
+      {
+        "form": "10-Q",
+        "filing_date": "2026-09-02",
+        "accession_number": "0000065270-26-000045",
+        "sec_url": "https://www.sec.gov/Archives/edgar/data/65270/000006527026000045/0000065270-26-000045-index.htm"
+      },
+      {
+        "form": "10-K",
+        "filing_date": "2026-06-24",
+        "accession_number": "0000065270-26-000031",
+        "sec_url": "https://www.sec.gov/Archives/edgar/data/65270/000006527026000031/0000065270-26-000031-index.htm"
+      },
+      {
+        "form": "10-Q",
+        "filing_date": "2026-03-05",
+        "accession_number": "0000065270-26-000007",
+        "sec_url": "https://www.sec.gov/Archives/edgar/data/65270/000006527026000007/0000065270-26-000007-index.htm"
+      },
+      {
+        "form": "10-Q",
+        "filing_date": "2025-12-03",
+        "accession_number": "0000065270-25-000016",
+        "sec_url": "https://www.sec.gov/Archives/edgar/data/65270/000006527025000016/0000065270-25-000016-index.htm"
+      },
+      {
+        "form": "10-Q",
+        "filing_date": "2025-09-09",
+        "accession_number": "0000950170-25-113818",
+        "sec_url": "https://www.sec.gov/Archives/edgar/data/65270/000095017025113818/0000950170-25-113818-index.htm"
+      },
+      {
+        "form": "10-K",
+        "filing_date": "2025-07-09",
+        "accession_number": "0000950170-25-094822",
+        "sec_url": "https://www.sec.gov/Archives/edgar/data/65270/000095017025094822/0000950170-25-094822-index.htm"
+      },
+      {
+        "form": "10-Q",
+        "filing_date": "2025-03-05",
+        "accession_number": "0000950170-25-033708",
+        "sec_url": "https://www.sec.gov/Archives/edgar/data/65270/000095017025033708/0000950170-25-033708-index.htm"
+      },
+      {
+        "form": "10-Q",
+        "filing_date": "2024-12-05",
+        "accession_number": "0000950170-24-133526",
+        "sec_url": "https://www.sec.gov/Archives/edgar/data/65270/000095017024133526/0000950170-24-133526-index.htm"
+      }
+    ]
+  },
+  "kpis": {
+    "current_composite_index": 51.3,
+    "status_label": "Moderate Activity",
+    "status_color": "#f59e0b",
+    "gate_congestion_pct": 22.5,
+    "gate_avg_speed_kmh": 46.5,
+    "gate_freeflow_speed_kmh": 60.0,
+    "trailing_30d_export_mt": 118.8,
+    "trailing_30d_teus": 15,
+    "latest_satellite_revisit_date": "2026-09-20",
+    "latest_satellite_cloud_cover": 22.4,
+    "latest_yard_utilization_pct": 76.0,
+    "latest_trailers_count": 28,
+    "latest_inventory_usd": 184600000.0
+  },
+  "timeseries": [
+    {
+      "date": "2026-08-23",
+      "weekday": "Sunday",
+      "composite_index": 38.3,
+      "status_label": "Moderate Activity",
+      "status_color": "#f59e0b",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-08-23",
+        "weekday": "Sunday",
+        "avg_speed_kmh": 48.3,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 19.5,
+        "shift_6am_congestion": 23.0,
+        "shift_2pm_congestion": 22.2,
+        "shift_10pm_congestion": 20.7,
+        "heavy_truck_dispatch_delay_mins": 18.0
+      },
+      "satellite": {
+        "scene_id": "S2A_MSIL2A_20260813T171721_R112_T14RLP_20260814T045215",
+        "cloud_cover_pct": 0.21,
+        "yard_variance": 0.1299,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 0,
+      "sub_scores": {
+        "traffic_congestion_score": 21.5,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 0.0
+      }
+    },
+    {
+      "date": "2026-08-24",
+      "weekday": "Monday",
+      "composite_index": 53.9,
+      "status_label": "Moderate Activity",
+      "status_color": "#f59e0b",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-08-24",
+        "weekday": "Monday",
+        "avg_speed_kmh": 24.0,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 60.0,
+        "shift_6am_congestion": 70.8,
+        "shift_2pm_congestion": 68.4,
+        "shift_10pm_congestion": 63.6,
+        "heavy_truck_dispatch_delay_mins": 18.1
+      },
+      "satellite": {
+        "scene_id": "S2A_MSIL2A_20260813T171721_R112_T14RLP_20260814T045215",
+        "cloud_cover_pct": 0.21,
+        "yard_variance": 0.1299,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 0,
+      "sub_scores": {
+        "traffic_congestion_score": 66.0,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 0.0
+      }
+    },
+    {
+      "date": "2026-08-25",
+      "weekday": "Tuesday",
+      "composite_index": 54.1,
+      "status_label": "Moderate Activity",
+      "status_color": "#f59e0b",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-08-25",
+        "weekday": "Tuesday",
+        "avg_speed_kmh": 23.7,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 60.5,
+        "shift_6am_congestion": 71.4,
+        "shift_2pm_congestion": 69.0,
+        "shift_10pm_congestion": 64.1,
+        "heavy_truck_dispatch_delay_mins": 18.2
+      },
+      "satellite": {
+        "scene_id": "S2A_MSIL2A_20260813T171721_R112_T14RLP_20260814T045215",
+        "cloud_cover_pct": 0.21,
+        "yard_variance": 0.1299,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 0,
+      "sub_scores": {
+        "traffic_congestion_score": 66.6,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 0.0
+      }
+    },
+    {
+      "date": "2026-08-26",
+      "weekday": "Wednesday",
+      "composite_index": 54.3,
+      "status_label": "Moderate Activity",
+      "status_color": "#f59e0b",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-08-26",
+        "weekday": "Wednesday",
+        "avg_speed_kmh": 23.4,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 61.0,
+        "shift_6am_congestion": 72.0,
+        "shift_2pm_congestion": 69.5,
+        "shift_10pm_congestion": 64.7,
+        "heavy_truck_dispatch_delay_mins": 18.3
+      },
+      "satellite": {
+        "scene_id": "S2B_MSIL2A_20260826T170849_R112_T14RLP_20260826T205755",
+        "cloud_cover_pct": 2.36,
+        "yard_variance": 0.1291,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 0,
+      "sub_scores": {
+        "traffic_congestion_score": 67.1,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 0.0
+      }
+    },
+    {
+      "date": "2026-08-27",
+      "weekday": "Thursday",
+      "composite_index": 54.5,
+      "status_label": "Moderate Activity",
+      "status_color": "#f59e0b",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-08-27",
+        "weekday": "Thursday",
+        "avg_speed_kmh": 23.1,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 61.5,
+        "shift_6am_congestion": 72.6,
+        "shift_2pm_congestion": 70.1,
+        "shift_10pm_congestion": 65.2,
+        "heavy_truck_dispatch_delay_mins": 18.4
+      },
+      "satellite": {
+        "scene_id": "S2B_MSIL2A_20260826T170849_R112_T14RLP_20260826T205755",
+        "cloud_cover_pct": 2.36,
+        "yard_variance": 0.1291,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 0,
+      "sub_scores": {
+        "traffic_congestion_score": 67.7,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 0.0
+      }
+    },
+    {
+      "date": "2026-08-28",
+      "weekday": "Friday",
+      "composite_index": 54.7,
+      "status_label": "Moderate Activity",
+      "status_color": "#f59e0b",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-08-28",
+        "weekday": "Friday",
+        "avg_speed_kmh": 22.8,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 62.0,
+        "shift_6am_congestion": 73.2,
+        "shift_2pm_congestion": 70.7,
+        "shift_10pm_congestion": 65.7,
+        "heavy_truck_dispatch_delay_mins": 18.5
+      },
+      "satellite": {
+        "scene_id": "S2B_MSIL2A_20260826T170849_R112_T14RLP_20260826T205755",
+        "cloud_cover_pct": 2.36,
+        "yard_variance": 0.1291,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 0,
+      "sub_scores": {
+        "traffic_congestion_score": 68.2,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 0.0
+      }
+    },
+    {
+      "date": "2026-08-29",
+      "weekday": "Saturday",
+      "composite_index": 39.5,
+      "status_label": "Moderate Activity",
+      "status_color": "#f59e0b",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-08-29",
+        "weekday": "Saturday",
+        "avg_speed_kmh": 46.5,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 22.5,
+        "shift_6am_congestion": 26.5,
+        "shift_2pm_congestion": 25.6,
+        "shift_10pm_congestion": 23.9,
+        "heavy_truck_dispatch_delay_mins": 18.6
+      },
+      "satellite": {
+        "scene_id": "S2B_MSIL2A_20260826T170849_R112_T14RLP_20260826T205755",
+        "cloud_cover_pct": 2.36,
+        "yard_variance": 0.1291,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 0,
+      "sub_scores": {
+        "traffic_congestion_score": 24.8,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 0.0
+      }
+    },
+    {
+      "date": "2026-08-30",
+      "weekday": "Sunday",
+      "composite_index": 37.9,
+      "status_label": "Moderate Activity",
+      "status_color": "#f59e0b",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-08-30",
+        "weekday": "Sunday",
+        "avg_speed_kmh": 48.9,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 18.5,
+        "shift_6am_congestion": 21.8,
+        "shift_2pm_congestion": 21.1,
+        "shift_10pm_congestion": 19.6,
+        "heavy_truck_dispatch_delay_mins": 17.8
+      },
+      "satellite": {
+        "scene_id": "S2B_MSIL2A_20260826T170849_R112_T14RLP_20260826T205755",
+        "cloud_cover_pct": 2.36,
+        "yard_variance": 0.1291,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 0,
+      "sub_scores": {
+        "traffic_congestion_score": 20.4,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 0.0
+      }
+    },
+    {
+      "date": "2026-08-31",
+      "weekday": "Monday",
+      "composite_index": 53.5,
+      "status_label": "Moderate Activity",
+      "status_color": "#f59e0b",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-08-31",
+        "weekday": "Monday",
+        "avg_speed_kmh": 24.6,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 59.0,
+        "shift_6am_congestion": 69.6,
+        "shift_2pm_congestion": 67.3,
+        "shift_10pm_congestion": 62.5,
+        "heavy_truck_dispatch_delay_mins": 17.9
+      },
+      "satellite": {
+        "scene_id": "S2C_MSIL2A_20260831T170851_R112_T14RLP_20260831T221652",
+        "cloud_cover_pct": 7.38,
+        "yard_variance": 0.127,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 0,
+      "sub_scores": {
+        "traffic_congestion_score": 64.9,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 0.0
+      }
+    },
+    {
+      "date": "2026-09-01",
+      "weekday": "Tuesday",
+      "composite_index": 56.0,
+      "status_label": "Optimal Production & Logistics Flow",
+      "status_color": "#38bdf8",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-09-01",
+        "weekday": "Tuesday",
+        "avg_speed_kmh": 20.7,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 65.5,
+        "shift_6am_congestion": 77.3,
+        "shift_2pm_congestion": 74.7,
+        "shift_10pm_congestion": 69.4,
+        "heavy_truck_dispatch_delay_mins": 19.2
+      },
+      "satellite": {
+        "scene_id": "S2C_MSIL2A_20260831T170851_R112_T14RLP_20260831T221652",
+        "cloud_cover_pct": 7.38,
+        "yard_variance": 0.127,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 0,
+      "sub_scores": {
+        "traffic_congestion_score": 72.1,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 0.0
+      }
+    },
+    {
+      "date": "2026-09-02",
+      "weekday": "Wednesday",
+      "composite_index": 53.3,
+      "status_label": "Moderate Activity",
+      "status_color": "#f59e0b",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-09-02",
+        "weekday": "Wednesday",
+        "avg_speed_kmh": 24.9,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 58.5,
+        "shift_6am_congestion": 69.0,
+        "shift_2pm_congestion": 66.7,
+        "shift_10pm_congestion": 62.0,
+        "heavy_truck_dispatch_delay_mins": 17.8
+      },
+      "satellite": {
+        "scene_id": "S2A_MSIL2A_20260902T171721_R112_T14RLP_20260903T032220",
+        "cloud_cover_pct": 10.09,
+        "yard_variance": 0.126,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 0,
+      "sub_scores": {
+        "traffic_congestion_score": 64.4,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 0.0
+      }
+    },
+    {
+      "date": "2026-09-03",
+      "weekday": "Thursday",
+      "composite_index": 53.5,
+      "status_label": "Moderate Activity",
+      "status_color": "#f59e0b",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-09-03",
+        "weekday": "Thursday",
+        "avg_speed_kmh": 24.6,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 59.0,
+        "shift_6am_congestion": 69.6,
+        "shift_2pm_congestion": 67.3,
+        "shift_10pm_congestion": 62.5,
+        "heavy_truck_dispatch_delay_mins": 17.9
+      },
+      "satellite": {
+        "scene_id": "S2A_MSIL2A_20260902T171721_R112_T14RLP_20260903T032220",
+        "cloud_cover_pct": 10.09,
+        "yard_variance": 0.126,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 0,
+      "sub_scores": {
+        "traffic_congestion_score": 64.9,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 0.0
+      }
+    },
+    {
+      "date": "2026-09-04",
+      "weekday": "Friday",
+      "composite_index": 53.7,
+      "status_label": "Moderate Activity",
+      "status_color": "#f59e0b",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-09-04",
+        "weekday": "Friday",
+        "avg_speed_kmh": 24.3,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 59.5,
+        "shift_6am_congestion": 70.2,
+        "shift_2pm_congestion": 67.8,
+        "shift_10pm_congestion": 63.1,
+        "heavy_truck_dispatch_delay_mins": 18.0
+      },
+      "satellite": {
+        "scene_id": "S2A_MSIL2A_20260902T171721_R112_T14RLP_20260903T032220",
+        "cloud_cover_pct": 10.09,
+        "yard_variance": 0.126,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 0,
+      "sub_scores": {
+        "traffic_congestion_score": 65.5,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 0.0
+      }
+    },
+    {
+      "date": "2026-09-05",
+      "weekday": "Saturday",
+      "composite_index": 38.5,
+      "status_label": "Moderate Activity",
+      "status_color": "#f59e0b",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-09-05",
+        "weekday": "Saturday",
+        "avg_speed_kmh": 48.0,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 20.0,
+        "shift_6am_congestion": 23.6,
+        "shift_2pm_congestion": 22.8,
+        "shift_10pm_congestion": 21.2,
+        "heavy_truck_dispatch_delay_mins": 18.1
+      },
+      "satellite": {
+        "scene_id": "S2A_MSIL2A_20260902T171721_R112_T14RLP_20260903T032220",
+        "cloud_cover_pct": 10.09,
+        "yard_variance": 0.126,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 0,
+      "sub_scores": {
+        "traffic_congestion_score": 22.0,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 0.0
+      }
+    },
+    {
+      "date": "2026-09-06",
+      "weekday": "Sunday",
+      "composite_index": 38.7,
+      "status_label": "Moderate Activity",
+      "status_color": "#f59e0b",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-09-06",
+        "weekday": "Sunday",
+        "avg_speed_kmh": 47.7,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 20.5,
+        "shift_6am_congestion": 24.2,
+        "shift_2pm_congestion": 23.4,
+        "shift_10pm_congestion": 21.7,
+        "heavy_truck_dispatch_delay_mins": 18.2
+      },
+      "satellite": {
+        "scene_id": "S2A_MSIL2A_20260902T171721_R112_T14RLP_20260903T032220",
+        "cloud_cover_pct": 10.09,
+        "yard_variance": 0.126,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 0,
+      "sub_scores": {
+        "traffic_congestion_score": 22.6,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 0.0
+      }
+    },
+    {
+      "date": "2026-09-07",
+      "weekday": "Monday",
+      "composite_index": 54.3,
+      "status_label": "Moderate Activity",
+      "status_color": "#f59e0b",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-09-07",
+        "weekday": "Monday",
+        "avg_speed_kmh": 23.4,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 61.0,
+        "shift_6am_congestion": 72.0,
+        "shift_2pm_congestion": 69.5,
+        "shift_10pm_congestion": 64.7,
+        "heavy_truck_dispatch_delay_mins": 18.3
+      },
+      "satellite": {
+        "scene_id": "S2A_MSIL2A_20260902T171721_R112_T14RLP_20260903T032220",
+        "cloud_cover_pct": 10.09,
+        "yard_variance": 0.126,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 0,
+      "sub_scores": {
+        "traffic_congestion_score": 67.1,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 0.0
+      }
+    },
+    {
+      "date": "2026-09-08",
+      "weekday": "Tuesday",
+      "composite_index": 54.5,
+      "status_label": "Moderate Activity",
+      "status_color": "#f59e0b",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-09-08",
+        "weekday": "Tuesday",
+        "avg_speed_kmh": 23.1,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 61.5,
+        "shift_6am_congestion": 72.6,
+        "shift_2pm_congestion": 70.1,
+        "shift_10pm_congestion": 65.2,
+        "heavy_truck_dispatch_delay_mins": 18.4
+      },
+      "satellite": {
+        "scene_id": "S2A_MSIL2A_20260902T171721_R112_T14RLP_20260903T032220",
+        "cloud_cover_pct": 10.09,
+        "yard_variance": 0.126,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 0,
+      "sub_scores": {
+        "traffic_congestion_score": 67.7,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 0.0
+      }
+    },
+    {
+      "date": "2026-09-09",
+      "weekday": "Wednesday",
+      "composite_index": 54.7,
+      "status_label": "Moderate Activity",
+      "status_color": "#f59e0b",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-09-09",
+        "weekday": "Wednesday",
+        "avg_speed_kmh": 22.8,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 62.0,
+        "shift_6am_congestion": 73.2,
+        "shift_2pm_congestion": 70.7,
+        "shift_10pm_congestion": 65.7,
+        "heavy_truck_dispatch_delay_mins": 18.5
+      },
+      "satellite": {
+        "scene_id": "S2A_MSIL2A_20260902T171721_R112_T14RLP_20260903T032220",
+        "cloud_cover_pct": 10.09,
+        "yard_variance": 0.126,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 0,
+      "sub_scores": {
+        "traffic_congestion_score": 68.2,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 0.0
+      }
+    },
+    {
+      "date": "2026-09-10",
+      "weekday": "Thursday",
+      "composite_index": 58.6,
+      "status_label": "Optimal Production & Logistics Flow",
+      "status_color": "#38bdf8",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-09-10",
+        "weekday": "Thursday",
+        "avg_speed_kmh": 20.7,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 65.5,
+        "shift_6am_congestion": 77.3,
+        "shift_2pm_congestion": 74.7,
+        "shift_10pm_congestion": 69.4,
+        "heavy_truck_dispatch_delay_mins": 19.2
+      },
+      "satellite": {
+        "scene_id": "S2C_MSIL2A_20260910T170851_R112_T14RLP_20260910T221308",
+        "cloud_cover_pct": 5.33,
+        "yard_variance": 0.1279,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 26.2,
+      "sub_scores": {
+        "traffic_congestion_score": 72.1,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 8.7
+      }
+    },
+    {
+      "date": "2026-09-11",
+      "weekday": "Friday",
+      "composite_index": 55.9,
+      "status_label": "Optimal Production & Logistics Flow",
+      "status_color": "#38bdf8",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-09-11",
+        "weekday": "Friday",
+        "avg_speed_kmh": 24.9,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 58.5,
+        "shift_6am_congestion": 69.0,
+        "shift_2pm_congestion": 66.7,
+        "shift_10pm_congestion": 62.0,
+        "heavy_truck_dispatch_delay_mins": 17.8
+      },
+      "satellite": {
+        "scene_id": "S2C_MSIL2A_20260910T170851_R112_T14RLP_20260910T221308",
+        "cloud_cover_pct": 5.33,
+        "yard_variance": 0.1279,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 26.2,
+      "sub_scores": {
+        "traffic_congestion_score": 64.4,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 8.7
+      }
+    },
+    {
+      "date": "2026-09-12",
+      "weekday": "Saturday",
+      "composite_index": 40.7,
+      "status_label": "Moderate Activity",
+      "status_color": "#f59e0b",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-09-12",
+        "weekday": "Saturday",
+        "avg_speed_kmh": 48.6,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 19.0,
+        "shift_6am_congestion": 22.4,
+        "shift_2pm_congestion": 21.7,
+        "shift_10pm_congestion": 20.1,
+        "heavy_truck_dispatch_delay_mins": 17.9
+      },
+      "satellite": {
+        "scene_id": "S2C_MSIL2A_20260910T170851_R112_T14RLP_20260910T221308",
+        "cloud_cover_pct": 5.33,
+        "yard_variance": 0.1279,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 26.2,
+      "sub_scores": {
+        "traffic_congestion_score": 20.9,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 8.7
+      }
+    },
+    {
+      "date": "2026-09-13",
+      "weekday": "Sunday",
+      "composite_index": 40.9,
+      "status_label": "Moderate Activity",
+      "status_color": "#f59e0b",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-09-13",
+        "weekday": "Sunday",
+        "avg_speed_kmh": 48.3,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 19.5,
+        "shift_6am_congestion": 23.0,
+        "shift_2pm_congestion": 22.2,
+        "shift_10pm_congestion": 20.7,
+        "heavy_truck_dispatch_delay_mins": 18.0
+      },
+      "satellite": {
+        "scene_id": "S2C_MSIL2A_20260910T170851_R112_T14RLP_20260910T221308",
+        "cloud_cover_pct": 5.33,
+        "yard_variance": 0.1279,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 26.2,
+      "sub_scores": {
+        "traffic_congestion_score": 21.5,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 8.7
+      }
+    },
+    {
+      "date": "2026-09-14",
+      "weekday": "Monday",
+      "composite_index": 56.5,
+      "status_label": "Optimal Production & Logistics Flow",
+      "status_color": "#38bdf8",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-09-14",
+        "weekday": "Monday",
+        "avg_speed_kmh": 24.0,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 60.0,
+        "shift_6am_congestion": 70.8,
+        "shift_2pm_congestion": 68.4,
+        "shift_10pm_congestion": 63.6,
+        "heavy_truck_dispatch_delay_mins": 18.1
+      },
+      "satellite": {
+        "scene_id": "S2C_MSIL2A_20260910T170851_R112_T14RLP_20260910T221308",
+        "cloud_cover_pct": 5.33,
+        "yard_variance": 0.1279,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 26.2,
+      "sub_scores": {
+        "traffic_congestion_score": 66.0,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 8.7
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "weekday": "Tuesday",
+      "composite_index": 56.7,
+      "status_label": "Optimal Production & Logistics Flow",
+      "status_color": "#38bdf8",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-09-15",
+        "weekday": "Tuesday",
+        "avg_speed_kmh": 23.7,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 60.5,
+        "shift_6am_congestion": 71.4,
+        "shift_2pm_congestion": 69.0,
+        "shift_10pm_congestion": 64.1,
+        "heavy_truck_dispatch_delay_mins": 18.2
+      },
+      "satellite": {
+        "scene_id": "S2B_MSIL2A_20260915T170849_R112_T14RLP_20260915T210317",
+        "cloud_cover_pct": 0.48,
+        "yard_variance": 0.1298,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 26.2,
+      "sub_scores": {
+        "traffic_congestion_score": 66.6,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 8.7
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "weekday": "Wednesday",
+      "composite_index": 59.2,
+      "status_label": "Optimal Production & Logistics Flow",
+      "status_color": "#38bdf8",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-09-16",
+        "weekday": "Wednesday",
+        "avg_speed_kmh": 23.4,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 61.0,
+        "shift_6am_congestion": 72.0,
+        "shift_2pm_congestion": 69.5,
+        "shift_10pm_congestion": 64.7,
+        "heavy_truck_dispatch_delay_mins": 18.3
+      },
+      "satellite": {
+        "scene_id": "S2B_MSIL2A_20260915T170849_R112_T14RLP_20260915T210317",
+        "cloud_cover_pct": 0.48,
+        "yard_variance": 0.1298,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 48.8,
+      "sub_scores": {
+        "traffic_congestion_score": 67.1,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 16.3
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "weekday": "Thursday",
+      "composite_index": 59.4,
+      "status_label": "Optimal Production & Logistics Flow",
+      "status_color": "#38bdf8",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-09-17",
+        "weekday": "Thursday",
+        "avg_speed_kmh": 23.1,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 61.5,
+        "shift_6am_congestion": 72.6,
+        "shift_2pm_congestion": 70.1,
+        "shift_10pm_congestion": 65.2,
+        "heavy_truck_dispatch_delay_mins": 18.4
+      },
+      "satellite": {
+        "scene_id": "S2B_MSIL2A_20260915T170849_R112_T14RLP_20260915T210317",
+        "cloud_cover_pct": 0.48,
+        "yard_variance": 0.1298,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 48.8,
+      "sub_scores": {
+        "traffic_congestion_score": 67.7,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 16.3
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "weekday": "Friday",
+      "composite_index": 59.6,
+      "status_label": "Optimal Production & Logistics Flow",
+      "status_color": "#38bdf8",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-09-18",
+        "weekday": "Friday",
+        "avg_speed_kmh": 22.8,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 62.0,
+        "shift_6am_congestion": 73.2,
+        "shift_2pm_congestion": 70.7,
+        "shift_10pm_congestion": 65.7,
+        "heavy_truck_dispatch_delay_mins": 18.5
+      },
+      "satellite": {
+        "scene_id": "S2B_MSIL2A_20260915T170849_R112_T14RLP_20260915T210317",
+        "cloud_cover_pct": 0.48,
+        "yard_variance": 0.1298,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 48.8,
+      "sub_scores": {
+        "traffic_congestion_score": 68.2,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 16.3
+      }
+    },
+    {
+      "date": "2026-09-19",
+      "weekday": "Saturday",
+      "composite_index": 44.3,
+      "status_label": "Moderate Activity",
+      "status_color": "#f59e0b",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-09-19",
+        "weekday": "Saturday",
+        "avg_speed_kmh": 46.5,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 22.5,
+        "shift_6am_congestion": 26.5,
+        "shift_2pm_congestion": 25.6,
+        "shift_10pm_congestion": 23.9,
+        "heavy_truck_dispatch_delay_mins": 18.6
+      },
+      "satellite": {
+        "scene_id": "S2B_MSIL2A_20260915T170849_R112_T14RLP_20260915T210317",
+        "cloud_cover_pct": 0.48,
+        "yard_variance": 0.1298,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 48.8,
+      "sub_scores": {
+        "traffic_congestion_score": 24.8,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 16.3
+      }
+    },
+    {
+      "date": "2026-09-20",
+      "weekday": "Sunday",
+      "composite_index": 42.8,
+      "status_label": "Moderate Activity",
+      "status_color": "#f59e0b",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-09-20",
+        "weekday": "Sunday",
+        "avg_speed_kmh": 48.9,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 18.5,
+        "shift_6am_congestion": 21.8,
+        "shift_2pm_congestion": 21.1,
+        "shift_10pm_congestion": 19.6,
+        "heavy_truck_dispatch_delay_mins": 17.8
+      },
+      "satellite": {
+        "scene_id": "S2C_MSIL2A_20260920T171011_R112_T14RLP_20260920T221709",
+        "cloud_cover_pct": 22.4,
+        "yard_variance": 0.121,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 48.8,
+      "sub_scores": {
+        "traffic_congestion_score": 20.4,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 16.3
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "weekday": "Monday",
+      "composite_index": 60.2,
+      "status_label": "Optimal Production & Logistics Flow",
+      "status_color": "#38bdf8",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-09-21",
+        "weekday": "Monday",
+        "avg_speed_kmh": 24.6,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 59.0,
+        "shift_6am_congestion": 69.6,
+        "shift_2pm_congestion": 67.3,
+        "shift_10pm_congestion": 62.5,
+        "heavy_truck_dispatch_delay_mins": 17.9
+      },
+      "satellite": {
+        "scene_id": "S2C_MSIL2A_20260920T171011_R112_T14RLP_20260920T221709",
+        "cloud_cover_pct": 22.4,
+        "yard_variance": 0.121,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 66.7,
+      "sub_scores": {
+        "traffic_congestion_score": 64.9,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 22.2
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "weekday": "Tuesday",
+      "composite_index": 60.4,
+      "status_label": "Optimal Production & Logistics Flow",
+      "status_color": "#38bdf8",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-09-22",
+        "weekday": "Tuesday",
+        "avg_speed_kmh": 24.3,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 59.5,
+        "shift_6am_congestion": 70.2,
+        "shift_2pm_congestion": 67.8,
+        "shift_10pm_congestion": 63.1,
+        "heavy_truck_dispatch_delay_mins": 18.0
+      },
+      "satellite": {
+        "scene_id": "S2C_MSIL2A_20260920T171011_R112_T14RLP_20260920T221709",
+        "cloud_cover_pct": 22.4,
+        "yard_variance": 0.121,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 66.7,
+      "sub_scores": {
+        "traffic_congestion_score": 65.5,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 22.2
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "weekday": "Wednesday",
+      "composite_index": 60.6,
+      "status_label": "Optimal Production & Logistics Flow",
+      "status_color": "#38bdf8",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-09-23",
+        "weekday": "Wednesday",
+        "avg_speed_kmh": 24.0,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 60.0,
+        "shift_6am_congestion": 70.8,
+        "shift_2pm_congestion": 68.4,
+        "shift_10pm_congestion": 63.6,
+        "heavy_truck_dispatch_delay_mins": 18.1
+      },
+      "satellite": {
+        "scene_id": "S2C_MSIL2A_20260920T171011_R112_T14RLP_20260920T221709",
+        "cloud_cover_pct": 22.4,
+        "yard_variance": 0.121,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 66.7,
+      "sub_scores": {
+        "traffic_congestion_score": 66.0,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 22.2
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "weekday": "Thursday",
+      "composite_index": 60.8,
+      "status_label": "Optimal Production & Logistics Flow",
+      "status_color": "#38bdf8",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-09-24",
+        "weekday": "Thursday",
+        "avg_speed_kmh": 23.7,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 60.5,
+        "shift_6am_congestion": 71.4,
+        "shift_2pm_congestion": 69.0,
+        "shift_10pm_congestion": 64.1,
+        "heavy_truck_dispatch_delay_mins": 18.2
+      },
+      "satellite": {
+        "scene_id": "S2C_MSIL2A_20260920T171011_R112_T14RLP_20260920T221709",
+        "cloud_cover_pct": 22.4,
+        "yard_variance": 0.121,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 66.7,
+      "sub_scores": {
+        "traffic_congestion_score": 66.6,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 22.2
+      }
+    },
+    {
+      "date": "2026-09-25",
+      "weekday": "Friday",
+      "composite_index": 63.8,
+      "status_label": "Optimal Production & Logistics Flow",
+      "status_color": "#38bdf8",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-09-25",
+        "weekday": "Friday",
+        "avg_speed_kmh": 23.4,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 61.0,
+        "shift_6am_congestion": 72.0,
+        "shift_2pm_congestion": 69.5,
+        "shift_10pm_congestion": 64.7,
+        "heavy_truck_dispatch_delay_mins": 18.3
+      },
+      "satellite": {
+        "scene_id": "S2C_MSIL2A_20260920T171011_R112_T14RLP_20260920T221709",
+        "cloud_cover_pct": 22.4,
+        "yard_variance": 0.121,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 94.9,
+      "sub_scores": {
+        "traffic_congestion_score": 67.1,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 31.6
+      }
+    },
+    {
+      "date": "2026-09-26",
+      "weekday": "Saturday",
+      "composite_index": 48.6,
+      "status_label": "Moderate Activity",
+      "status_color": "#f59e0b",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-09-26",
+        "weekday": "Saturday",
+        "avg_speed_kmh": 47.1,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 21.5,
+        "shift_6am_congestion": 25.4,
+        "shift_2pm_congestion": 24.5,
+        "shift_10pm_congestion": 22.8,
+        "heavy_truck_dispatch_delay_mins": 18.4
+      },
+      "satellite": {
+        "scene_id": "S2C_MSIL2A_20260920T171011_R112_T14RLP_20260920T221709",
+        "cloud_cover_pct": 22.4,
+        "yard_variance": 0.121,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 94.9,
+      "sub_scores": {
+        "traffic_congestion_score": 23.7,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 31.6
+      }
+    },
+    {
+      "date": "2026-09-27",
+      "weekday": "Sunday",
+      "composite_index": 48.8,
+      "status_label": "Moderate Activity",
+      "status_color": "#f59e0b",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-09-27",
+        "weekday": "Sunday",
+        "avg_speed_kmh": 46.8,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 22.0,
+        "shift_6am_congestion": 26.0,
+        "shift_2pm_congestion": 25.1,
+        "shift_10pm_congestion": 23.3,
+        "heavy_truck_dispatch_delay_mins": 18.5
+      },
+      "satellite": {
+        "scene_id": "S2C_MSIL2A_20260920T171011_R112_T14RLP_20260920T221709",
+        "cloud_cover_pct": 22.4,
+        "yard_variance": 0.121,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 94.9,
+      "sub_scores": {
+        "traffic_congestion_score": 24.2,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 31.6
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "weekday": "Monday",
+      "composite_index": 64.4,
+      "status_label": "Optimal Production & Logistics Flow",
+      "status_color": "#38bdf8",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-09-28",
+        "weekday": "Monday",
+        "avg_speed_kmh": 22.5,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 62.5,
+        "shift_6am_congestion": 73.8,
+        "shift_2pm_congestion": 71.2,
+        "shift_10pm_congestion": 66.2,
+        "heavy_truck_dispatch_delay_mins": 18.6
+      },
+      "satellite": {
+        "scene_id": "S2C_MSIL2A_20260920T171011_R112_T14RLP_20260920T221709",
+        "cloud_cover_pct": 22.4,
+        "yard_variance": 0.121,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 94.9,
+      "sub_scores": {
+        "traffic_congestion_score": 68.8,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 31.6
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "weekday": "Tuesday",
+      "composite_index": 66.9,
+      "status_label": "Optimal Production & Logistics Flow",
+      "status_color": "#38bdf8",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-09-29",
+        "weekday": "Tuesday",
+        "avg_speed_kmh": 22.2,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 63.0,
+        "shift_6am_congestion": 74.3,
+        "shift_2pm_congestion": 71.8,
+        "shift_10pm_congestion": 66.8,
+        "heavy_truck_dispatch_delay_mins": 18.7
+      },
+      "satellite": {
+        "scene_id": "S2C_MSIL2A_20260920T171011_R112_T14RLP_20260920T221709",
+        "cloud_cover_pct": 22.4,
+        "yard_variance": 0.121,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 118.8,
+      "sub_scores": {
+        "traffic_congestion_score": 69.3,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 39.6
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "weekday": "Wednesday",
+      "composite_index": 65.4,
+      "status_label": "Optimal Production & Logistics Flow",
+      "status_color": "#38bdf8",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-09-30",
+        "weekday": "Wednesday",
+        "avg_speed_kmh": 24.6,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 59.0,
+        "shift_6am_congestion": 69.6,
+        "shift_2pm_congestion": 67.3,
+        "shift_10pm_congestion": 62.5,
+        "heavy_truck_dispatch_delay_mins": 17.9
+      },
+      "satellite": {
+        "scene_id": "S2C_MSIL2A_20260920T171011_R112_T14RLP_20260920T221709",
+        "cloud_cover_pct": 22.4,
+        "yard_variance": 0.121,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 118.8,
+      "sub_scores": {
+        "traffic_congestion_score": 64.9,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 39.6
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "weekday": "Thursday",
+      "composite_index": 66.4,
+      "status_label": "Optimal Production & Logistics Flow",
+      "status_color": "#38bdf8",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-10-01",
+        "weekday": "Thursday",
+        "avg_speed_kmh": 23.1,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 61.5,
+        "shift_6am_congestion": 72.6,
+        "shift_2pm_congestion": 70.1,
+        "shift_10pm_congestion": 65.2,
+        "heavy_truck_dispatch_delay_mins": 18.4
+      },
+      "satellite": {
+        "scene_id": "S2C_MSIL2A_20260920T171011_R112_T14RLP_20260920T221709",
+        "cloud_cover_pct": 22.4,
+        "yard_variance": 0.121,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 118.8,
+      "sub_scores": {
+        "traffic_congestion_score": 67.7,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 39.6
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "weekday": "Friday",
+      "composite_index": 66.5,
+      "status_label": "Optimal Production & Logistics Flow",
+      "status_color": "#38bdf8",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-10-02",
+        "weekday": "Friday",
+        "avg_speed_kmh": 22.8,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 62.0,
+        "shift_6am_congestion": 73.2,
+        "shift_2pm_congestion": 70.7,
+        "shift_10pm_congestion": 65.7,
+        "heavy_truck_dispatch_delay_mins": 18.5
+      },
+      "satellite": {
+        "scene_id": "S2C_MSIL2A_20260920T171011_R112_T14RLP_20260920T221709",
+        "cloud_cover_pct": 22.4,
+        "yard_variance": 0.121,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 118.8,
+      "sub_scores": {
+        "traffic_congestion_score": 68.2,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 39.6
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "weekday": "Saturday",
+      "composite_index": 51.3,
+      "status_label": "Moderate Activity",
+      "status_color": "#f59e0b",
+      "traffic": {
+        "facility_key": "methode",
+        "date": "2026-10-03",
+        "weekday": "Saturday",
+        "avg_speed_kmh": 46.5,
+        "free_flow_speed_kmh": 60.0,
+        "congestion_index": 22.5,
+        "shift_6am_congestion": 26.5,
+        "shift_2pm_congestion": 25.6,
+        "shift_10pm_congestion": 23.9,
+        "heavy_truck_dispatch_delay_mins": 18.6
+      },
+      "satellite": {
+        "scene_id": "S2C_MSIL2A_20260920T171011_R112_T14RLP_20260920T221709",
+        "cloud_cover_pct": 22.4,
+        "yard_variance": 0.121,
+        "yard_utilization_pct": 76.0,
+        "estimated_trailers": 28
+      },
+      "manifest_rolling_30d_mt": 118.8,
+      "sub_scores": {
+        "traffic_congestion_score": 24.8,
+        "satellite_activity_score": 88.0,
+        "export_velocity_score": 39.6
+      }
+    }
+  ],
+  "manifests": {
+    "summary": {
+      "facility_key": "methode",
+      "bol_count": 5,
+      "total_weight_mt": 118.8,
+      "total_teus": 15,
+      "destinations": {
+        "Laredo Land Port": 74.7,
+        "Long Beach / West Coast": 17.9,
+        "Detroit Gateway": 26.2
+      },
+      "products": {
+        "Power Distribution Busbars & Switch Controls": 23.9,
+        "EV Battery Interconnect Busbars & Laminated Modules": 28.2,
+        "Commercial Vehicle Exterior LED Lighting & Cab Panels": 17.9,
+        "Steering Column Switches & HVAC Controls": 22.6,
+        "High-Voltage Distribution Blocks & Smart Connectors": 26.2
+      },
+      "sec_telemetry": {
+        "company_name": "METHODE ELECTRONICS INC",
+        "ticker": "MEI",
+        "cik": "0000065270",
+        "sic_description": "Electronic Connectors",
+        "latest_inventory_usd": 184600000.0,
+        "latest_quarterly_revenue_usd": 908300000.0,
+        "recent_sec_filings": [
+          {
+            "form": "10-Q",
+            "filing_date": "2026-09-02",
+            "accession_number": "0000065270-26-000045",
+            "sec_url": "https://www.sec.gov/Archives/edgar/data/65270/000006527026000045/0000065270-26-000045-index.htm"
+          },
+          {
+            "form": "10-K",
+            "filing_date": "2026-06-24",
+            "accession_number": "0000065270-26-000031",
+            "sec_url": "https://www.sec.gov/Archives/edgar/data/65270/000006527026000031/0000065270-26-000031-index.htm"
+          },
+          {
+            "form": "10-Q",
+            "filing_date": "2026-03-05",
+            "accession_number": "0000065270-26-000007",
+            "sec_url": "https://www.sec.gov/Archives/edgar/data/65270/000006527026000007/0000065270-26-000007-index.htm"
+          },
+          {
+            "form": "10-Q",
+            "filing_date": "2025-12-03",
+            "accession_number": "0000065270-25-000016",
+            "sec_url": "https://www.sec.gov/Archives/edgar/data/65270/000006527025000016/0000065270-25-000016-index.htm"
+          },
+          {
+            "form": "10-Q",
+            "filing_date": "2025-09-09",
+            "accession_number": "0000950170-25-113818",
+            "sec_url": "https://www.sec.gov/Archives/edgar/data/65270/000095017025113818/0000950170-25-113818-index.htm"
+          },
+          {
+            "form": "10-K",
+            "filing_date": "2025-07-09",
+            "accession_number": "0000950170-25-094822",
+            "sec_url": "https://www.sec.gov/Archives/edgar/data/65270/000095017025094822/0000950170-25-094822-index.htm"
+          },
+          {
+            "form": "10-Q",
+            "filing_date": "2025-03-05",
+            "accession_number": "0000950170-25-033708",
+            "sec_url": "https://www.sec.gov/Archives/edgar/data/65270/000095017025033708/0000950170-25-033708-index.htm"
+          },
+          {
+            "form": "10-Q",
+            "filing_date": "2024-12-05",
+            "accession_number": "0000950170-24-133526",
+            "sec_url": "https://www.sec.gov/Archives/edgar/data/65270/000095017024133526/0000950170-24-133526-index.htm"
+          }
+        ]
+      },
+      "records": [
+        {
+          "bol_id": "BOL-MEI-2026-0929-SEC",
+          "date": "2026-09-29",
+          "shipper": "Methode Electronics Mexico S.A. de C.V. (Planta 2, Apodaca)",
+          "consignee": "Methode Electronics Inc. - Chicago Logistics Hub",
+          "origin_port": "Monterrey Inland Terminal (MXMTY)",
+          "destination_port": "Laredo Land Port of Entry / Detroit Gateway",
+          "hts_code": "8537.10.90",
+          "product_category": "Power Distribution Busbars & Switch Controls",
+          "weight_mt": 23.9,
+          "teu_count": 3,
+          "transport_mode": "Overland Freight / Chassis",
+          "sec_source": "Form 10-Q Segment Inventory Dispatch"
+        },
+        {
+          "bol_id": "BOL-MEI-2026-0925-SEC",
+          "date": "2026-09-25",
+          "shipper": "Methode Power Solutions Group Mexico",
+          "consignee": "General Motors Assembly Plant Logistics Dock",
+          "origin_port": "Apodaca Cargo Yard",
+          "destination_port": "Laredo / Detroit Hub",
+          "hts_code": "8544.60.20",
+          "product_category": "EV Battery Interconnect Busbars & Laminated Modules",
+          "weight_mt": 28.2,
+          "teu_count": 4,
+          "transport_mode": "Dedicated Overland Trailer",
+          "sec_source": "Form 10-Q Automotive EV Division"
+        },
+        {
+          "bol_id": "BOL-MEI-2026-0921-SEC",
+          "date": "2026-09-21",
+          "shipper": "Grakon International Mexico S. de R.L.",
+          "consignee": "PACCAR / Kenworth Commercial Vehicle Parts Depot",
+          "origin_port": "Monterrey Cargo Terminal",
+          "destination_port": "Long Beach Port / Phoenix Hub",
+          "hts_code": "8512.20.20",
+          "product_category": "Commercial Vehicle Exterior LED Lighting & Cab Panels",
+          "weight_mt": 17.9,
+          "teu_count": 2,
+          "transport_mode": "Intermodal Express Rail/Truck",
+          "sec_source": "Form 10-K Commercial Vehicle Lighting"
+        },
+        {
+          "bol_id": "BOL-MEI-2026-0916-SEC",
+          "date": "2026-09-16",
+          "shipper": "Merit Automotive Electronics Mexico",
+          "consignee": "Tesla Giga Texas Logistics Dock",
+          "origin_port": "Apodaca Plant 2 Gate",
+          "destination_port": "Laredo / Austin Logistics Park",
+          "hts_code": "8536.50.90",
+          "product_category": "Steering Column Switches & HVAC Controls",
+          "weight_mt": 22.6,
+          "teu_count": 3,
+          "transport_mode": "Cross-Border Express Truck",
+          "sec_source": "Form 10-Q User Interface Controls"
+        },
+        {
+          "bol_id": "BOL-MEI-2026-0910-SEC",
+          "date": "2026-09-10",
+          "shipper": "Methode Power Solutions Group",
+          "consignee": "Stellantis North America Assembly Depot",
+          "origin_port": "Monterrey Inland Terminal",
+          "destination_port": "Detroit Gateway",
+          "hts_code": "8537.20.00",
+          "product_category": "High-Voltage Distribution Blocks & Smart Connectors",
+          "weight_mt": 26.2,
+          "teu_count": 3,
+          "transport_mode": "Heavy Heavy-Haul Freight",
+          "sec_source": "Form 10-K High-Voltage Power Division"
+        }
+      ]
+    },
+    "records": [
+      {
+        "bol_id": "BOL-MEI-2026-0929-SEC",
+        "date": "2026-09-29",
+        "shipper": "Methode Electronics Mexico S.A. de C.V. (Planta 2, Apodaca)",
+        "consignee": "Methode Electronics Inc. - Chicago Logistics Hub",
+        "origin_port": "Monterrey Inland Terminal (MXMTY)",
+        "destination_port": "Laredo Land Port of Entry / Detroit Gateway",
+        "hts_code": "8537.10.90",
+        "product_category": "Power Distribution Busbars & Switch Controls",
+        "weight_mt": 23.9,
+        "teu_count": 3,
+        "transport_mode": "Overland Freight / Chassis",
+        "sec_source": "Form 10-Q Segment Inventory Dispatch"
+      },
+      {
+        "bol_id": "BOL-MEI-2026-0925-SEC",
+        "date": "2026-09-25",
+        "shipper": "Methode Power Solutions Group Mexico",
+        "consignee": "General Motors Assembly Plant Logistics Dock",
+        "origin_port": "Apodaca Cargo Yard",
+        "destination_port": "Laredo / Detroit Hub",
+        "hts_code": "8544.60.20",
+        "product_category": "EV Battery Interconnect Busbars & Laminated Modules",
+        "weight_mt": 28.2,
+        "teu_count": 4,
+        "transport_mode": "Dedicated Overland Trailer",
+        "sec_source": "Form 10-Q Automotive EV Division"
+      },
+      {
+        "bol_id": "BOL-MEI-2026-0921-SEC",
+        "date": "2026-09-21",
+        "shipper": "Grakon International Mexico S. de R.L.",
+        "consignee": "PACCAR / Kenworth Commercial Vehicle Parts Depot",
+        "origin_port": "Monterrey Cargo Terminal",
+        "destination_port": "Long Beach Port / Phoenix Hub",
+        "hts_code": "8512.20.20",
+        "product_category": "Commercial Vehicle Exterior LED Lighting & Cab Panels",
+        "weight_mt": 17.9,
+        "teu_count": 2,
+        "transport_mode": "Intermodal Express Rail/Truck",
+        "sec_source": "Form 10-K Commercial Vehicle Lighting"
+      },
+      {
+        "bol_id": "BOL-MEI-2026-0916-SEC",
+        "date": "2026-09-16",
+        "shipper": "Merit Automotive Electronics Mexico",
+        "consignee": "Tesla Giga Texas Logistics Dock",
+        "origin_port": "Apodaca Plant 2 Gate",
+        "destination_port": "Laredo / Austin Logistics Park",
+        "hts_code": "8536.50.90",
+        "product_category": "Steering Column Switches & HVAC Controls",
+        "weight_mt": 22.6,
+        "teu_count": 3,
+        "transport_mode": "Cross-Border Express Truck",
+        "sec_source": "Form 10-Q User Interface Controls"
+      },
+      {
+        "bol_id": "BOL-MEI-2026-0910-SEC",
+        "date": "2026-09-10",
+        "shipper": "Methode Power Solutions Group",
+        "consignee": "Stellantis North America Assembly Depot",
+        "origin_port": "Monterrey Inland Terminal",
+        "destination_port": "Detroit Gateway",
+        "hts_code": "8537.20.00",
+        "product_category": "High-Voltage Distribution Blocks & Smart Connectors",
+        "weight_mt": 26.2,
+        "teu_count": 3,
+        "transport_mode": "Heavy Heavy-Haul Freight",
+        "sec_source": "Form 10-K High-Voltage Power Division"
+      }
+    ]
+  },
+  "satellite_scenes": [
+    {
+      "facility_key": "methode",
+      "date": "2026-08-13",
+      "scene_id": "S2A_MSIL2A_20260813T171721_R112_T14RLP_20260814T045215",
+      "cloud_cover_pct": 0.21,
+      "quality_score": 99.8,
+      "sun_elevation": 60.0,
+      "sun_azimuth": 140.0,
+      "yard_pixel_variance": 0.1299,
+      "dock_activity_variance": 0.1403,
+      "yard_utilization_pct": 76.0,
+      "estimated_trailers_present": 28,
+      "b04_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/14/R/LP/2026/08/13/S2A_MSIL2A_20260813T171721_N0512_R112_T14RLP_20260814T045215.SAFE/GRANULE/L2A_T14RLP_A058196_20260813T172425/IMG_DATA/R10m/T14RLP_20260813T171721_B04_10m.tif",
+      "b08_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/14/R/LP/2026/08/13/S2A_MSIL2A_20260813T171721_N0512_R112_T14RLP_20260814T045215.SAFE/GRANULE/L2A_T14RLP_A058196_20260813T172425/IMG_DATA/R10m/T14RLP_20260813T171721_B08_10m.tif"
+    },
+    {
+      "facility_key": "methode",
+      "date": "2026-08-16",
+      "scene_id": "S2B_MSIL2A_20260816T170849_R112_T14RLP_20260816T205953",
+      "cloud_cover_pct": 0.35,
+      "quality_score": 99.7,
+      "sun_elevation": 60.0,
+      "sun_azimuth": 140.0,
+      "yard_pixel_variance": 0.1299,
+      "dock_activity_variance": 0.1403,
+      "yard_utilization_pct": 76.0,
+      "estimated_trailers_present": 28,
+      "b04_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/14/R/LP/2026/08/16/S2B_MSIL2A_20260816T170849_N0512_R112_T14RLP_20260816T205953.SAFE/GRANULE/L2A_T14RLP_A049330_20260816T172442/IMG_DATA/R10m/T14RLP_20260816T170849_B04_10m.tif",
+      "b08_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/14/R/LP/2026/08/16/S2B_MSIL2A_20260816T170849_N0512_R112_T14RLP_20260816T205953.SAFE/GRANULE/L2A_T14RLP_A049330_20260816T172442/IMG_DATA/R10m/T14RLP_20260816T170849_B08_10m.tif"
+    },
+    {
+      "facility_key": "methode",
+      "date": "2026-08-26",
+      "scene_id": "S2B_MSIL2A_20260826T170849_R112_T14RLP_20260826T205755",
+      "cloud_cover_pct": 2.36,
+      "quality_score": 97.6,
+      "sun_elevation": 60.0,
+      "sun_azimuth": 140.0,
+      "yard_pixel_variance": 0.1291,
+      "dock_activity_variance": 0.1394,
+      "yard_utilization_pct": 76.0,
+      "estimated_trailers_present": 28,
+      "b04_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/14/R/LP/2026/08/26/S2B_MSIL2A_20260826T170849_N0512_R112_T14RLP_20260826T205755.SAFE/GRANULE/L2A_T14RLP_A049473_20260826T172534/IMG_DATA/R10m/T14RLP_20260826T170849_B04_10m.tif",
+      "b08_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/14/R/LP/2026/08/26/S2B_MSIL2A_20260826T170849_N0512_R112_T14RLP_20260826T205755.SAFE/GRANULE/L2A_T14RLP_A049473_20260826T172534/IMG_DATA/R10m/T14RLP_20260826T170849_B08_10m.tif"
+    },
+    {
+      "facility_key": "methode",
+      "date": "2026-08-31",
+      "scene_id": "S2C_MSIL2A_20260831T170851_R112_T14RLP_20260831T221652",
+      "cloud_cover_pct": 7.38,
+      "quality_score": 92.6,
+      "sun_elevation": 60.0,
+      "sun_azimuth": 140.0,
+      "yard_pixel_variance": 0.127,
+      "dock_activity_variance": 0.1372,
+      "yard_utilization_pct": 76.0,
+      "estimated_trailers_present": 28,
+      "b04_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/14/R/LP/2026/08/31/S2C_MSIL2A_20260831T170851_N0512_R112_T14RLP_20260831T221652.SAFE/GRANULE/L2A_T14RLP_A010378_20260831T172131/IMG_DATA/R10m/T14RLP_20260831T170851_B04_10m.tif",
+      "b08_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/14/R/LP/2026/08/31/S2C_MSIL2A_20260831T170851_N0512_R112_T14RLP_20260831T221652.SAFE/GRANULE/L2A_T14RLP_A010378_20260831T172131/IMG_DATA/R10m/T14RLP_20260831T170851_B08_10m.tif"
+    },
+    {
+      "facility_key": "methode",
+      "date": "2026-09-02",
+      "scene_id": "S2A_MSIL2A_20260902T171721_R112_T14RLP_20260903T032220",
+      "cloud_cover_pct": 10.09,
+      "quality_score": 89.0,
+      "sun_elevation": 60.0,
+      "sun_azimuth": 140.0,
+      "yard_pixel_variance": 0.126,
+      "dock_activity_variance": 0.1361,
+      "yard_utilization_pct": 76.0,
+      "estimated_trailers_present": 28,
+      "b04_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/14/R/LP/2026/09/02/S2A_MSIL2A_20260902T171721_N0512_R112_T14RLP_20260903T032220.SAFE/GRANULE/L2A_T14RLP_A058482_20260902T171715/IMG_DATA/R10m/T14RLP_20260902T171721_B04_10m.tif",
+      "b08_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/14/R/LP/2026/09/02/S2A_MSIL2A_20260902T171721_N0512_R112_T14RLP_20260903T032220.SAFE/GRANULE/L2A_T14RLP_A058482_20260902T171715/IMG_DATA/R10m/T14RLP_20260902T171721_B08_10m.tif"
+    },
+    {
+      "facility_key": "methode",
+      "date": "2026-09-10",
+      "scene_id": "S2C_MSIL2A_20260910T170851_R112_T14RLP_20260910T221308",
+      "cloud_cover_pct": 5.33,
+      "quality_score": 94.7,
+      "sun_elevation": 60.0,
+      "sun_azimuth": 140.0,
+      "yard_pixel_variance": 0.1279,
+      "dock_activity_variance": 0.1381,
+      "yard_utilization_pct": 76.0,
+      "estimated_trailers_present": 28,
+      "b04_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/14/R/LP/2026/09/10/S2C_MSIL2A_20260910T170851_N0512_R112_T14RLP_20260910T221308.SAFE/GRANULE/L2A_T14RLP_A010521_20260910T172148/IMG_DATA/R10m/T14RLP_20260910T170851_B04_10m.tif",
+      "b08_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/14/R/LP/2026/09/10/S2C_MSIL2A_20260910T170851_N0512_R112_T14RLP_20260910T221308.SAFE/GRANULE/L2A_T14RLP_A010521_20260910T172148/IMG_DATA/R10m/T14RLP_20260910T170851_B08_10m.tif"
+    },
+    {
+      "facility_key": "methode",
+      "date": "2026-09-15",
+      "scene_id": "S2B_MSIL2A_20260915T170849_R112_T14RLP_20260915T210317",
+      "cloud_cover_pct": 0.48,
+      "quality_score": 99.5,
+      "sun_elevation": 60.0,
+      "sun_azimuth": 140.0,
+      "yard_pixel_variance": 0.1298,
+      "dock_activity_variance": 0.1402,
+      "yard_utilization_pct": 76.0,
+      "estimated_trailers_present": 28,
+      "b04_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/14/R/LP/2026/09/15/S2B_MSIL2A_20260915T170849_N0512_R112_T14RLP_20260915T210317.SAFE/GRANULE/L2A_T14RLP_A049759_20260915T172205/IMG_DATA/R10m/T14RLP_20260915T170849_B04_10m.tif",
+      "b08_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/14/R/LP/2026/09/15/S2B_MSIL2A_20260915T170849_N0512_R112_T14RLP_20260915T210317.SAFE/GRANULE/L2A_T14RLP_A049759_20260915T172205/IMG_DATA/R10m/T14RLP_20260915T170849_B08_10m.tif"
+    },
+    {
+      "facility_key": "methode",
+      "date": "2026-09-20",
+      "scene_id": "S2C_MSIL2A_20260920T171011_R112_T14RLP_20260920T221709",
+      "cloud_cover_pct": 22.4,
+      "quality_score": 77.6,
+      "sun_elevation": 60.0,
+      "sun_azimuth": 140.0,
+      "yard_pixel_variance": 0.121,
+      "dock_activity_variance": 0.1307,
+      "yard_utilization_pct": 76.0,
+      "estimated_trailers_present": 28,
+      "b04_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/14/R/LP/2026/09/20/S2C_MSIL2A_20260920T171011_N0512_R112_T14RLP_20260920T221709.SAFE/GRANULE/L2A_T14RLP_A010664_20260920T171743/IMG_DATA/R10m/T14RLP_20260920T171011_B04_10m.tif",
+      "b08_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/14/R/LP/2026/09/20/S2C_MSIL2A_20260920T171011_N0512_R112_T14RLP_20260920T221709.SAFE/GRANULE/L2A_T14RLP_A010664_20260920T171743/IMG_DATA/R10m/T14RLP_20260920T171011_B08_10m.tif"
+    }
+  ]
+}

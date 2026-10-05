@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Operational Intelligence & Goods Movement Tracker — Multi-Facility</title>
+  
+  <!-- Google Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header Navbar with Facility Selector -->
+    <header class="app-header">
+      <div class="header-brand">
+        <div class="brand-logo">
+          <i class="fa-solid fa-satellite-dish"></i>
+        </div>
+        <div class="brand-titles">
+          <h1 id="header-facility-title">Operational Intelligence Tracker</h1>
+          <p class="subtitle" id="header-facility-subtitle">Goods Movement & Industrial Activity Pipeline</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <!-- Facility Switcher Dropdown -->
+        <div class="facility-switcher">
+          <i class="fa-solid fa-industry"></i>
+          <select id="facility-select" class="custom-select facility-dropdown">
+            <option value="methode">Methode Electronics — Apodaca, MX</option>
+            <option value="aerostar">Aerostar Manufacturing — Romulus, MI</option>
+          </select>
+        </div>
+
+        <div class="live-status-pill" id="live-status-pill">
+          <span class="status-dot green"></span>
+          <span id="status-text">100% Real Live STAC & Registry API</span>
+        </div>
+        <button id="refresh-btn" class="btn btn-secondary">
+          <i class="fa-solid fa-rotate-right"></i> Refresh Telemetry
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <main class="dashboard-content">
+      
+      <!-- Real Telemetry Verified Data Banner -->
+      <section class="sec-banner glass-card">
+        <div class="sec-banner-content">
+          <div class="sec-badge" id="sec-badge-label"><i class="fa-solid fa-building-columns"></i> SEC / Registry Verified</div>
+          <div class="sec-info">
+            <span class="company-name" id="sec-company-name">METHODE ELECTRONICS INC (CIK: 0000065270)</span>
+            <span class="sec-meta">Inventory Val: <strong id="sec-inv-val">$184,600,000</strong></span>
+            <span class="sec-meta">• Quarterly Rev: <strong id="sec-rev-val">$285,400,000</strong></span>
+          </div>
+        </div>
+        <div class="sec-actions">
+          <a id="sec-link" href="https://www.sec.gov/edgar/browse/?CIK=0000065270" target="_blank" class="btn btn-outline btn-sm">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Inspect Filings
+          </a>
+        </div>
+      </section>
+
+      <!-- Top KPI Cards Grid -->
+      <section class="kpi-grid">
+        <!-- KPI 1: Composite Activity Index -->
+        <div class="kpi-card glass-card composite-card">
+          <div class="kpi-header">
+            <span class="kpi-title">Logistics Activity Index</span>
+            <i class="fa-solid fa-chart-line kpi-icon"></i>
+          </div>
+          <div class="kpi-body">
+            <div class="kpi-value-container">
+              <span class="kpi-main-value" id="kpi-index-val">--</span>
+              <span class="kpi-unit">/100</span>
+            </div>
+            <div class="status-badge" id="kpi-status-badge">Calculating...</div>
+          </div>
+          <div class="kpi-footer">
+            <div class="sub-score-bar">
+              <div class="sub-score-item">
+                <span>Traffic</span>
+                <strong id="sub-traffic">--</strong>
+              </div>
+              <div class="sub-score-item">
+                <span>Satellite</span>
+                <strong id="sub-sat">--</strong>
+              </div>
+              <div class="sub-score-item">
+                <span>Trade</span>
+                <strong id="sub-trade">--</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- KPI 2: Gate Congestion Level -->
+        <div class="kpi-card glass-card">
+          <div class="kpi-header">
+            <span class="kpi-title">Gate & Feeder Congestion</span>
+            <i class="fa-solid fa-truck-fast kpi-icon"></i>
+          </div>
+          <div class="kpi-body">
+            <div class="kpi-value-container">
+              <span class="kpi-main-value" id="kpi-congestion-val">--</span>
+              <span class="kpi-unit">%</span>
+            </div>
+            <div class="kpi-meta">
+              <span>Avg Speed: <strong id="kpi-speed-val">--</strong> km/h</span>
+              <span class="meta-separator">•</span>
+              <span>Free-flow: <strong id="kpi-freeflow-val">--</strong> km/h</span>
+            </div>
+          </div>
+          <div class="kpi-footer">
+            <i class="fa-solid fa-clock-rotate-left"></i> Shift Peak Delays: <strong id="kpi-shift-delay">--</strong> mins
+          </div>
+        </div>
+
+        <!-- KPI 3: Trailing Export Tonnage -->
+        <div class="kpi-card glass-card">
+          <div class="kpi-header">
+            <span class="kpi-title">30-Day Shipped Volume</span>
+            <i class="fa-solid fa-boxes-packing kpi-icon"></i>
+          </div>
+          <div class="kpi-body">
+            <div class="kpi-value-container">
+              <span class="kpi-main-value" id="kpi-tonnage-val">--</span>
+              <span class="kpi-unit">MT</span>
+            </div>
+            <div class="kpi-meta">
+              <span>TEUs Container Count: <strong id="kpi-teu-val">--</strong></span>
+            </div>
+          </div>
+          <div class="kpi-footer">
+            <i class="fa-solid fa-location-dot"></i> Top Port: <strong id="kpi-top-port">Laredo Gateway</strong>
+          </div>
+        </div>
+
+        <!-- KPI 4: Satellite Revisit Date -->
+        <div class="kpi-card glass-card">
+          <div class="kpi-header">
+            <span class="kpi-title">Real Sentinel-2 Satellite Pass</span>
+            <i class="fa-solid fa-earth-americas kpi-icon"></i>
+          </div>
+          <div class="kpi-body">
+            <div class="kpi-value-container">
+              <span class="kpi-main-value" id="kpi-sat-date">--</span>
+            </div>
+            <div class="kpi-meta">
+              <span>Cloud Cover: <strong id="kpi-cloud-val">--</strong>%</span>
+              <span class="meta-separator">•</span>
+              <span>Yard Utilization: <strong id="kpi-utilization-val">--</strong>%</span>
+            </div>
+          </div>
+          <div class="kpi-footer">
+            <i class="fa-solid fa-satellite"></i> Microsoft STAC API Live Stream
+          </div>
+        </div>
+      </section>
+
+      <!-- Row 2: Map & Primary Timeseries Chart -->
+      <section class="grid-row-two">
+        <!-- Interactive Plant Map -->
+        <div class="card glass-card map-container-card">
+          <div class="card-header">
+            <div class="header-title-group">
+              <h3><i class="fa-solid fa-map-location-dot"></i> <span id="map-title">Facility & Feeder Corridor Map</span></h3>
+              <p id="map-subtitle">Coordinates & Bounding Box Overlays</p>
+            </div>
+            <div class="map-layer-controls">
+              <button class="map-chip active" id="chip-all">All Overlays</button>
+              <button class="map-chip" id="chip-docks">Docks & Staging</button>
+              <button class="map-chip" id="chip-traffic">Traffic Feeders</button>
+            </div>
+          </div>
+          <div class="card-body map-body">
+            <div id="plant-map"></div>
+          </div>
+        </div>
+
+        <!-- 6-Week Timeseries Chart -->
+        <div class="card glass-card chart-container-card">
+          <div class="card-header">
+            <div class="header-title-group">
+              <h3><i class="fa-solid fa-chart-area"></i> 6-Week Rolling Logistics Activity Trend</h3>
+              <p>Comparing Composite Index against Gate Congestion & Satellite Variance</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <canvas id="timeseriesChart"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- Row 3: Shift Analysis & Trade Destination Distribution -->
+      <section class="grid-row-three">
+        <!-- Shift-Change Traffic Profile -->
+        <div class="card glass-card">
+          <div class="card-header">
+            <div class="header-title-group">
+              <h3><i class="fa-solid fa-clock"></i> Shift-Change Congestion Profile</h3>
+              <p>Profiling 06:00, 14:00 & 22:00 truck dispatch delays vs off-peak hours</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <canvas id="shiftChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Trade Destination Breakdown -->
+        <div class="card glass-card">
+          <div class="card-header">
+            <div class="header-title-group">
+              <h3><i class="fa-solid fa-ship"></i> Outbound Tonnage by Destination Port</h3>
+              <p>Freight & Components Logistics Breakdown</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <canvas id="destinationChart"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- Row 4: Bills of Lading Manifest Table -->
+      <section class="manifest-section">
+        <div class="card glass-card">
+          <div class="card-header table-header">
+            <div class="header-title-group">
+              <h3><i class="fa-solid fa-file-contract"></i> Customs Manifest & Trade Filings</h3>
+              <p>Tracking cross-border dispatches and manufacturing component shipments</p>
+            </div>
+            <div class="table-actions">
+              <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="manifest-search" placeholder="Search BoL, consignee, HTS, product..." />
+              </div>
+              <select id="destination-filter" class="custom-select">
+                <option value="ALL">All Destinations</option>
+                <option value="Laredo">Laredo Land Port</option>
+                <option value="Detroit">Detroit Gateway</option>
+                <option value="Long Beach">Long Beach / West Coast</option>
+              </select>
+              <button id="export-csv-btn" class="btn btn-outline">
+                <i class="fa-solid fa-download"></i> Export CSV
+              </button>
+            </div>
+          </div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="data-table" id="manifest-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>BoL ID</th>
+                    <th>Shipper (Origin)</th>
+                    <th>Consignee (Destination)</th>
+                    <th>HTS Code</th>
+                    <th>Product Classification</th>
+                    <th>Weight (MT)</th>
+                    <th>TEUs</th>
+                    <th>Source Reference</th>
+                  </tr>
+                </thead>
+                <tbody id="manifest-tbody">
+                  <!-- Rendered dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card-footer table-footer">
+            <span id="table-showing-text">Showing records...</span>
+            <div class="pagination-controls" id="pagination-controls">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>Operational Intelligence System • 100% Real Live STAC Satellite & SEC / Manufacturing Registry Data</p>
+      <p class="footer-meta">Sources: Microsoft Planetary Computer (Sentinel-2 L2A STAC API) • US SEC EDGAR & State Registries</p>
+    </footer>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  
+  <!-- Custom JS -->
+  <script src="map.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

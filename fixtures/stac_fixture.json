@@ -1,0 +1,120 @@
+{
+  "facility": "Methode Electronics Planta 2, Apodaca, NL, Mexico",
+  "bbox": [-100.138, 25.775, -100.122, 25.785],
+  "center": [25.780, -100.130],
+  "staging_area_coords": [
+    [-100.133, 25.782],
+    [-100.127, 25.782],
+    [-100.127, 25.778],
+    [-100.133, 25.778],
+    [-100.133, 25.782]
+  ],
+  "dock_zones_coords": [
+    [-100.131, 25.781],
+    [-100.129, 25.781],
+    [-100.129, 25.779],
+    [-100.131, 25.779],
+    [-100.131, 25.781]
+  ],
+  "scenes": [
+    {
+      "date": "2026-08-23",
+      "scene_id": "S2B_MSIL2A_20260823T171909_N0509_R012_T14RPR",
+      "cloud_cover_pct": 3.2,
+      "red_mean_b04": 0.142,
+      "nir_mean_b08": 0.285,
+      "yard_pixel_variance": 0.038,
+      "dock_activity_variance": 0.041,
+      "yard_utilization_pct": 68.5,
+      "estimated_trailers_present": 28
+    },
+    {
+      "date": "2026-08-28",
+      "scene_id": "S2A_MSIL2A_20260828T171851_N0509_R012_T14RPR",
+      "cloud_cover_pct": 8.4,
+      "red_mean_b04": 0.155,
+      "nir_mean_b08": 0.298,
+      "yard_pixel_variance": 0.052,
+      "dock_activity_variance": 0.059,
+      "yard_utilization_pct": 82.0,
+      "estimated_trailers_present": 35
+    },
+    {
+      "date": "2026-09-02",
+      "scene_id": "S2B_MSIL2A_20260902T171909_N0509_R012_T14RPR",
+      "cloud_cover_pct": 4.1,
+      "red_mean_b04": 0.138,
+      "nir_mean_b08": 0.276,
+      "yard_pixel_variance": 0.044,
+      "dock_activity_variance": 0.048,
+      "yard_utilization_pct": 74.0,
+      "estimated_trailers_present": 31
+    },
+    {
+      "date": "2026-09-07",
+      "scene_id": "S2A_MSIL2A_20260907T171851_N0509_R012_T14RPR",
+      "cloud_cover_pct": 12.0,
+      "red_mean_b04": 0.162,
+      "nir_mean_b08": 0.312,
+      "yard_pixel_variance": 0.061,
+      "dock_activity_variance": 0.065,
+      "yard_utilization_pct": 88.5,
+      "estimated_trailers_present": 38
+    },
+    {
+      "date": "2026-09-12",
+      "scene_id": "S2B_MSIL2A_20260912T171909_N0509_R012_T14RPR",
+      "cloud_cover_pct": 2.5,
+      "red_mean_b04": 0.140,
+      "nir_mean_b08": 0.281,
+      "yard_pixel_variance": 0.035,
+      "dock_activity_variance": 0.039,
+      "yard_utilization_pct": 62.0,
+      "estimated_trailers_present": 26
+    },
+    {
+      "date": "2026-09-17",
+      "scene_id": "S2A_MSIL2A_20260917T171851_N0509_R012_T14RPR",
+      "cloud_cover_pct": 6.8,
+      "red_mean_b04": 0.149,
+      "nir_mean_b08": 0.294,
+      "yard_pixel_variance": 0.049,
+      "dock_activity_variance": 0.054,
+      "yard_utilization_pct": 79.0,
+      "estimated_trailers_present": 33
+    },
+    {
+      "date": "2026-09-22",
+      "scene_id": "S2B_MSIL2A_20260922T171909_N0509_R012_T14RPR",
+      "cloud_cover_pct": 1.9,
+      "red_mean_b04": 0.158,
+      "nir_mean_b08": 0.305,
+      "yard_pixel_variance": 0.058,
+      "dock_activity_variance": 0.062,
+      "yard_utilization_pct": 85.0,
+      "estimated_trailers_present": 36
+    },
+    {
+      "date": "2026-09-27",
+      "scene_id": "S2A_MSIL2A_20260927T171851_N0509_R012_T14RPR",
+      "cloud_cover_pct": 5.4,
+      "red_mean_b04": 0.165,
+      "nir_mean_b08": 0.318,
+      "yard_pixel_variance": 0.067,
+      "dock_activity_variance": 0.071,
+      "yard_utilization_pct": 91.0,
+      "estimated_trailers_present": 39
+    },
+    {
+      "date": "2026-10-02",
+      "scene_id": "S2B_MSIL2A_20261002T171909_N0509_R012_T14RPR",
+      "cloud_cover_pct": 3.8,
+      "red_mean_b04": 0.151,
+      "nir_mean_b08": 0.299,
+      "yard_pixel_variance": 0.054,
+      "dock_activity_variance": 0.058,
+      "yard_utilization_pct": 81.5,
+      "estimated_trailers_present": 34
+    }
+  ]
+}

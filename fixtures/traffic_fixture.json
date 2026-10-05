@@ -1,0 +1,73 @@
+{
+  "target_facility": "Methode Electronics Planta 2, Apodaca",
+  "road_segments": [
+    {
+      "segment_id": "SEG_MIGUEL_ALEMAN_NORTH",
+      "name": "Carretera Miguel Alemán (Northbound Feeder)",
+      "free_flow_speed_kmh": 70,
+      "coordinates": [
+        [-100.145, 25.772],
+        [-100.138, 25.776],
+        [-100.130, 25.780],
+        [-100.125, 25.784]
+      ]
+    },
+    {
+      "segment_id": "SEG_AGUA_FRIA_GATE",
+      "name": "Blvd. Agua Fría (Plant Gate Entrance)",
+      "free_flow_speed_kmh": 50,
+      "coordinates": [
+        [-100.135, 25.783],
+        [-100.130, 25.780],
+        [-100.128, 25.777]
+      ]
+    },
+    {
+      "segment_id": "SEG_INDUSTRIAL_PARK_ACCESS",
+      "name": "Av. Parque Industrial (Truck Dispatch Corridor)",
+      "free_flow_speed_kmh": 45,
+      "coordinates": [
+        [-100.130, 25.780],
+        [-100.122, 25.781]
+      ]
+    }
+  ],
+  "shift_profiles": {
+    "shift_1_morning": {
+      "time_window": "06:00 - 07:30",
+      "shift_change_hour": 6,
+      "avg_speed_kmh": 22.4,
+      "congestion_pct": 58.2,
+      "heavy_truck_ratio_pct": 38.0
+    },
+    "shift_2_afternoon": {
+      "time_window": "14:00 - 15:30",
+      "shift_change_hour": 14,
+      "avg_speed_kmh": 24.8,
+      "congestion_pct": 53.6,
+      "heavy_truck_ratio_pct": 42.5
+    },
+    "shift_3_night": {
+      "time_window": "22:00 - 23:30",
+      "shift_change_hour": 22,
+      "avg_speed_kmh": 31.5,
+      "congestion_pct": 41.0,
+      "heavy_truck_ratio_pct": 49.0
+    },
+    "off_peak": {
+      "time_window": "Inter-shift windows",
+      "avg_speed_kmh": 48.2,
+      "congestion_pct": 14.5,
+      "heavy_truck_ratio_pct": 21.0
+    }
+  },
+  "weekly_traffic_baseline": {
+    "Monday": { "congestion_index": 52.4, "dispatch_delay_mins": 14.2 },
+    "Tuesday": { "congestion_index": 58.1, "dispatch_delay_mins": 18.5 },
+    "Wednesday": { "congestion_index": 61.8, "dispatch_delay_mins": 21.0 },
+    "Thursday": { "congestion_index": 64.2, "dispatch_delay_mins": 23.4 },
+    "Friday": { "congestion_index": 68.9, "dispatch_delay_mins": 28.0 },
+    "Saturday": { "congestion_index": 34.5, "dispatch_delay_mins": 7.2 },
+    "Sunday": { "congestion_index": 18.2, "dispatch_delay_mins": 2.5 }
+  }
+}
