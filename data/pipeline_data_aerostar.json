@@ -13,1642 +13,204 @@
         42.203,
         -83.385,
         42.213
-      ]
+      ],
+      "verification_source": "OpenStreetMap / Public Corporate Directory"
     },
-    "last_updated": "2026-10-03 13:48:41 UTC",
-    "backfill_days": 42,
-    "data_source_mode": "100% Real Live STAC API + Official SEC / Registry Filings"
+    "last_updated": "2026-10-05T05:16:32Z",
+    "data_source_mode": {
+      "sentinel2_scenes": "live",
+      "sec": "not connected",
+      "traffic": "not connected",
+      "trade": "not connected"
+    }
   },
   "sec_telemetry": {
-    "company_name": "AEROSTAR MANUFACTURING",
-    "ticker": "PRIVATE",
-    "facility_location": "28275 Northline Rd, Romulus, MI 48174",
-    "sic_description": "PRECISION CNC MACHINING & FABRICATION",
-    "latest_inventory_usd": 42500000.0,
-    "latest_quarterly_revenue_usd": 68000000.0
+    "company_name": "Aerostar Manufacturing",
+    "ticker": null,
+    "cik": null,
+    "status": "Private company \u2013 no public SEC filings available",
+    "inventory": null,
+    "revenue": null,
+    "provenance": {
+      "source": "US SEC EDGAR API",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000065270.json",
+      "retrieved_at": "2026-10-05T05:16:33Z",
+      "observed_at": null,
+      "note": "Private entity not subject to SEC public disclosure rules"
+    }
   },
   "kpis": {
-    "current_composite_index": 56.9,
-    "status_label": "Optimal Production & Logistics Flow",
-    "status_color": "#38bdf8",
-    "gate_congestion_pct": 40.2,
-    "gate_avg_speed_kmh": 32.9,
-    "gate_freeflow_speed_kmh": 55.0,
-    "trailing_30d_export_mt": 105.9,
-    "trailing_30d_teus": 12,
+    "composite_index": null,
+    "composite_status_label": "Not calculated",
+    "gate_congestion_pct": null,
+    "traffic_status": "not connected",
+    "traffic_reason": "No TOMTOM_API_KEY set in environment",
+    "traffic_provenance": {
+      "source": "TomTom Traffic Flow API",
+      "url": "https://api.tomtom.com/traffic/services/4/flowSegmentData/relative/10/json",
+      "retrieved_at": "2026-10-05T05:16:33Z",
+      "observed_at": null,
+      "note": "API key required for live traffic flow stream"
+    },
     "latest_satellite_revisit_date": "2026-09-28",
-    "latest_satellite_cloud_cover": 0.78,
-    "latest_yard_utilization_pct": 76.0,
-    "latest_trailers_count": 28,
-    "latest_inventory_usd": 42500000.0
+    "latest_satellite_cloud_cover": 0.7813,
+    "latest_satellite_scene_id": "S2C_MSIL2A_20260928T163051_R083_T17TLG_20260928T200725",
+    "latest_satellite_provenance": {
+      "source": "Microsoft Planetary Computer STAC API (sentinel-2-l2a)",
+      "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-2-l2a/items/S2C_MSIL2A_20260928T163051_R083_T17TLG_20260928T200725",
+      "retrieved_at": "2026-10-05T05:16:32Z",
+      "observed_at": "2026-09-28"
+    },
+    "inventory": null,
+    "revenue": null,
+    "sec_provenance": {
+      "source": "US SEC EDGAR API",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000065270.json",
+      "retrieved_at": "2026-10-05T05:16:33Z",
+      "observed_at": null,
+      "note": "Private entity not subject to SEC public disclosure rules"
+    }
   },
-  "timeseries": [
+  "satellite_scenes": [
     {
-      "date": "2026-08-23",
-      "weekday": "Sunday",
-      "composite_index": 47.8,
-      "status_label": "Moderate Activity",
-      "status_color": "#f59e0b",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-08-23",
-        "weekday": "Sunday",
-        "avg_speed_kmh": 30.7,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 44.2,
-        "shift_6am_congestion": 52.2,
-        "shift_2pm_congestion": 50.4,
-        "shift_10pm_congestion": 46.9,
-        "heavy_truck_dispatch_delay_mins": 13.0
-      },
-      "satellite": {
-        "scene_id": "S2C_MSIL2A_20260819T162831_R083_T17TKG_20260819T214709",
-        "cloud_cover_pct": 34.49,
-        "yard_variance": 0.1162,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 0,
-      "sub_scores": {
-        "traffic_congestion_score": 48.6,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 0.0
+      "scene_id": "S2C_MSIL2A_20260806T161831_R040_T17TLG_20260806T211213",
+      "date": "2026-08-06",
+      "cloud_cover_pct": 33.520555,
+      "nodata_pixel_pct": 0.0,
+      "b04_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/17/T/LG/2026/08/06/S2C_MSIL2A_20260806T161831_N0512_R040_T17TLG_20260806T211213.SAFE/GRANULE/L2A_T17TLG_A010020_20260806T162320/IMG_DATA/R10m/T17TLG_20260806T161831_B04_10m.tif?st=2026-10-04T05%3A16%3A31Z&se=2026-10-05T06%3A01%3A31Z&sp=rl&sv=2025-07-05&sr=c&skoid=9c8ff44a-6a2c-4dfb-b298-1c9212f64d9a&sktid=72f988bf-86f1-41af-91ab-2d7cd011db47&skt=2026-10-05T05%3A12%3A21Z&ske=2026-10-12T05%3A12%3A21Z&sks=b&skv=2025-07-05&sig=6%2BXBShc7Rj5kzW83/9A%2Bd58OlSSU7q/atOcAOOEr96E%3D",
+      "b08_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/17/T/LG/2026/08/06/S2C_MSIL2A_20260806T161831_N0512_R040_T17TLG_20260806T211213.SAFE/GRANULE/L2A_T17TLG_A010020_20260806T162320/IMG_DATA/R10m/T17TLG_20260806T161831_B08_10m.tif?st=2026-10-04T05%3A16%3A31Z&se=2026-10-05T06%3A01%3A31Z&sp=rl&sv=2025-07-05&sr=c&skoid=9c8ff44a-6a2c-4dfb-b298-1c9212f64d9a&sktid=72f988bf-86f1-41af-91ab-2d7cd011db47&skt=2026-10-05T05%3A12%3A21Z&ske=2026-10-12T05%3A12%3A21Z&sks=b&skv=2025-07-05&sig=6%2BXBShc7Rj5kzW83/9A%2Bd58OlSSU7q/atOcAOOEr96E%3D",
+      "provenance": {
+        "source": "Microsoft Planetary Computer STAC API (sentinel-2-l2a)",
+        "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-2-l2a/items/S2C_MSIL2A_20260806T161831_R040_T17TLG_20260806T211213",
+        "retrieved_at": "2026-10-05T05:16:32Z",
+        "observed_at": "2026-08-06"
       }
     },
     {
+      "scene_id": "S2A_MSIL2A_20260808T162711_R040_T17TLG_20260809T041115",
+      "date": "2026-08-08",
+      "cloud_cover_pct": 23.278947,
+      "nodata_pixel_pct": 0.0,
+      "b04_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/17/T/LG/2026/08/08/S2A_MSIL2A_20260808T162711_N0512_R040_T17TLG_20260809T041115.SAFE/GRANULE/L2A_T17TLG_A058124_20260808T163143/IMG_DATA/R10m/T17TLG_20260808T162711_B04_10m.tif?st=2026-10-04T05%3A16%3A31Z&se=2026-10-05T06%3A01%3A31Z&sp=rl&sv=2025-07-05&sr=c&skoid=9c8ff44a-6a2c-4dfb-b298-1c9212f64d9a&sktid=72f988bf-86f1-41af-91ab-2d7cd011db47&skt=2026-10-05T05%3A12%3A21Z&ske=2026-10-12T05%3A12%3A21Z&sks=b&skv=2025-07-05&sig=6%2BXBShc7Rj5kzW83/9A%2Bd58OlSSU7q/atOcAOOEr96E%3D",
+      "b08_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/17/T/LG/2026/08/08/S2A_MSIL2A_20260808T162711_N0512_R040_T17TLG_20260809T041115.SAFE/GRANULE/L2A_T17TLG_A058124_20260808T163143/IMG_DATA/R10m/T17TLG_20260808T162711_B08_10m.tif?st=2026-10-04T05%3A16%3A31Z&se=2026-10-05T06%3A01%3A31Z&sp=rl&sv=2025-07-05&sr=c&skoid=9c8ff44a-6a2c-4dfb-b298-1c9212f64d9a&sktid=72f988bf-86f1-41af-91ab-2d7cd011db47&skt=2026-10-05T05%3A12%3A21Z&ske=2026-10-12T05%3A12%3A21Z&sks=b&skv=2025-07-05&sig=6%2BXBShc7Rj5kzW83/9A%2Bd58OlSSU7q/atOcAOOEr96E%3D",
+      "provenance": {
+        "source": "Microsoft Planetary Computer STAC API (sentinel-2-l2a)",
+        "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-2-l2a/items/S2A_MSIL2A_20260808T162711_R040_T17TLG_20260809T041115",
+        "retrieved_at": "2026-10-05T05:16:32Z",
+        "observed_at": "2026-08-08"
+      }
+    },
+    {
+      "scene_id": "S2C_MSIL2A_20260809T162831_R083_T17TLG_20260809T214104",
+      "date": "2026-08-09",
+      "cloud_cover_pct": 15.357892,
+      "nodata_pixel_pct": 95.035648,
+      "b04_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/17/T/LG/2026/08/09/S2C_MSIL2A_20260809T162831_N0512_R083_T17TLG_20260809T214104.SAFE/GRANULE/L2A_T17TLG_A010063_20260809T163229/IMG_DATA/R10m/T17TLG_20260809T162831_B04_10m.tif?st=2026-10-04T05%3A16%3A31Z&se=2026-10-05T06%3A01%3A31Z&sp=rl&sv=2025-07-05&sr=c&skoid=9c8ff44a-6a2c-4dfb-b298-1c9212f64d9a&sktid=72f988bf-86f1-41af-91ab-2d7cd011db47&skt=2026-10-05T05%3A12%3A21Z&ske=2026-10-12T05%3A12%3A21Z&sks=b&skv=2025-07-05&sig=6%2BXBShc7Rj5kzW83/9A%2Bd58OlSSU7q/atOcAOOEr96E%3D",
+      "b08_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/17/T/LG/2026/08/09/S2C_MSIL2A_20260809T162831_N0512_R083_T17TLG_20260809T214104.SAFE/GRANULE/L2A_T17TLG_A010063_20260809T163229/IMG_DATA/R10m/T17TLG_20260809T162831_B08_10m.tif?st=2026-10-04T05%3A16%3A31Z&se=2026-10-05T06%3A01%3A31Z&sp=rl&sv=2025-07-05&sr=c&skoid=9c8ff44a-6a2c-4dfb-b298-1c9212f64d9a&sktid=72f988bf-86f1-41af-91ab-2d7cd011db47&skt=2026-10-05T05%3A12%3A21Z&ske=2026-10-12T05%3A12%3A21Z&sks=b&skv=2025-07-05&sig=6%2BXBShc7Rj5kzW83/9A%2Bd58OlSSU7q/atOcAOOEr96E%3D",
+      "provenance": {
+        "source": "Microsoft Planetary Computer STAC API (sentinel-2-l2a)",
+        "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-2-l2a/items/S2C_MSIL2A_20260809T162831_R083_T17TLG_20260809T214104",
+        "retrieved_at": "2026-10-05T05:16:32Z",
+        "observed_at": "2026-08-09"
+      }
+    },
+    {
+      "scene_id": "S2C_MSIL2A_20260819T162831_R083_T17TKG_20260819T214709",
+      "date": "2026-08-19",
+      "cloud_cover_pct": 34.489521,
+      "nodata_pixel_pct": 7.677323,
+      "b04_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/17/T/KG/2026/08/19/S2C_MSIL2A_20260819T162831_N0512_R083_T17TKG_20260819T214709.SAFE/GRANULE/L2A_T17TKG_A010206_20260819T163342/IMG_DATA/R10m/T17TKG_20260819T162831_B04_10m.tif?st=2026-10-04T05%3A16%3A31Z&se=2026-10-05T06%3A01%3A31Z&sp=rl&sv=2025-07-05&sr=c&skoid=9c8ff44a-6a2c-4dfb-b298-1c9212f64d9a&sktid=72f988bf-86f1-41af-91ab-2d7cd011db47&skt=2026-10-05T05%3A12%3A21Z&ske=2026-10-12T05%3A12%3A21Z&sks=b&skv=2025-07-05&sig=6%2BXBShc7Rj5kzW83/9A%2Bd58OlSSU7q/atOcAOOEr96E%3D",
+      "b08_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/17/T/KG/2026/08/19/S2C_MSIL2A_20260819T162831_N0512_R083_T17TKG_20260819T214709.SAFE/GRANULE/L2A_T17TKG_A010206_20260819T163342/IMG_DATA/R10m/T17TKG_20260819T162831_B08_10m.tif?st=2026-10-04T05%3A16%3A31Z&se=2026-10-05T06%3A01%3A31Z&sp=rl&sv=2025-07-05&sr=c&skoid=9c8ff44a-6a2c-4dfb-b298-1c9212f64d9a&sktid=72f988bf-86f1-41af-91ab-2d7cd011db47&skt=2026-10-05T05%3A12%3A21Z&ske=2026-10-12T05%3A12%3A21Z&sks=b&skv=2025-07-05&sig=6%2BXBShc7Rj5kzW83/9A%2Bd58OlSSU7q/atOcAOOEr96E%3D",
+      "provenance": {
+        "source": "Microsoft Planetary Computer STAC API (sentinel-2-l2a)",
+        "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-2-l2a/items/S2C_MSIL2A_20260819T162831_R083_T17TKG_20260819T214709",
+        "retrieved_at": "2026-10-05T05:16:32Z",
+        "observed_at": "2026-08-19"
+      }
+    },
+    {
+      "scene_id": "S2A_MSIL2A_20260821T163701_R083_T17TLG_20260822T060610",
+      "date": "2026-08-21",
+      "cloud_cover_pct": 3.198271,
+      "nodata_pixel_pct": 94.655913,
+      "b04_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/17/T/LG/2026/08/21/S2A_MSIL2A_20260821T163701_N0512_R083_T17TLG_20260822T060610.SAFE/GRANULE/L2A_T17TLG_A058310_20260821T163703/IMG_DATA/R10m/T17TLG_20260821T163701_B04_10m.tif?st=2026-10-04T05%3A16%3A31Z&se=2026-10-05T06%3A01%3A31Z&sp=rl&sv=2025-07-05&sr=c&skoid=9c8ff44a-6a2c-4dfb-b298-1c9212f64d9a&sktid=72f988bf-86f1-41af-91ab-2d7cd011db47&skt=2026-10-05T05%3A12%3A21Z&ske=2026-10-12T05%3A12%3A21Z&sks=b&skv=2025-07-05&sig=6%2BXBShc7Rj5kzW83/9A%2Bd58OlSSU7q/atOcAOOEr96E%3D",
+      "b08_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/17/T/LG/2026/08/21/S2A_MSIL2A_20260821T163701_N0512_R083_T17TLG_20260822T060610.SAFE/GRANULE/L2A_T17TLG_A058310_20260821T163703/IMG_DATA/R10m/T17TLG_20260821T163701_B08_10m.tif?st=2026-10-04T05%3A16%3A31Z&se=2026-10-05T06%3A01%3A31Z&sp=rl&sv=2025-07-05&sr=c&skoid=9c8ff44a-6a2c-4dfb-b298-1c9212f64d9a&sktid=72f988bf-86f1-41af-91ab-2d7cd011db47&skt=2026-10-05T05%3A12%3A21Z&ske=2026-10-12T05%3A12%3A21Z&sks=b&skv=2025-07-05&sig=6%2BXBShc7Rj5kzW83/9A%2Bd58OlSSU7q/atOcAOOEr96E%3D",
+      "provenance": {
+        "source": "Microsoft Planetary Computer STAC API (sentinel-2-l2a)",
+        "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-2-l2a/items/S2A_MSIL2A_20260821T163701_R083_T17TLG_20260822T060610",
+        "retrieved_at": "2026-10-05T05:16:32Z",
+        "observed_at": "2026-08-21"
+      }
+    },
+    {
+      "scene_id": "S2B_MSIL2A_20260824T162829_R083_T17TLG_20260824T202206",
       "date": "2026-08-24",
-      "weekday": "Monday",
-      "composite_index": 54.4,
-      "status_label": "Moderate Activity",
-      "status_color": "#f59e0b",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-08-24",
-        "weekday": "Monday",
-        "avg_speed_kmh": 21.3,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 61.2,
-        "shift_6am_congestion": 72.2,
-        "shift_2pm_congestion": 69.8,
-        "shift_10pm_congestion": 64.9,
-        "heavy_truck_dispatch_delay_mins": 13.1
-      },
-      "satellite": {
-        "scene_id": "S2B_MSIL2A_20260824T162829_R083_T17TLG_20260824T202206",
-        "cloud_cover_pct": 6.69,
-        "yard_variance": 0.1273,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 0,
-      "sub_scores": {
-        "traffic_congestion_score": 67.3,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 0.0
+      "cloud_cover_pct": 6.690012,
+      "nodata_pixel_pct": 94.587171,
+      "b04_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/17/T/LG/2026/08/24/S2B_MSIL2A_20260824T162829_N0512_R083_T17TLG_20260824T202206.SAFE/GRANULE/L2A_T17TLG_A049444_20260824T163251/IMG_DATA/R10m/T17TLG_20260824T162829_B04_10m.tif?st=2026-10-04T05%3A16%3A31Z&se=2026-10-05T06%3A01%3A31Z&sp=rl&sv=2025-07-05&sr=c&skoid=9c8ff44a-6a2c-4dfb-b298-1c9212f64d9a&sktid=72f988bf-86f1-41af-91ab-2d7cd011db47&skt=2026-10-05T05%3A12%3A21Z&ske=2026-10-12T05%3A12%3A21Z&sks=b&skv=2025-07-05&sig=6%2BXBShc7Rj5kzW83/9A%2Bd58OlSSU7q/atOcAOOEr96E%3D",
+      "b08_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/17/T/LG/2026/08/24/S2B_MSIL2A_20260824T162829_N0512_R083_T17TLG_20260824T202206.SAFE/GRANULE/L2A_T17TLG_A049444_20260824T163251/IMG_DATA/R10m/T17TLG_20260824T162829_B08_10m.tif?st=2026-10-04T05%3A16%3A31Z&se=2026-10-05T06%3A01%3A31Z&sp=rl&sv=2025-07-05&sr=c&skoid=9c8ff44a-6a2c-4dfb-b298-1c9212f64d9a&sktid=72f988bf-86f1-41af-91ab-2d7cd011db47&skt=2026-10-05T05%3A12%3A21Z&ske=2026-10-12T05%3A12%3A21Z&sks=b&skv=2025-07-05&sig=6%2BXBShc7Rj5kzW83/9A%2Bd58OlSSU7q/atOcAOOEr96E%3D",
+      "provenance": {
+        "source": "Microsoft Planetary Computer STAC API (sentinel-2-l2a)",
+        "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-2-l2a/items/S2B_MSIL2A_20260824T162829_R083_T17TLG_20260824T202206",
+        "retrieved_at": "2026-10-05T05:16:32Z",
+        "observed_at": "2026-08-24"
       }
     },
     {
-      "date": "2026-08-25",
-      "weekday": "Tuesday",
-      "composite_index": 54.5,
-      "status_label": "Moderate Activity",
-      "status_color": "#f59e0b",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-08-25",
-        "weekday": "Tuesday",
-        "avg_speed_kmh": 21.1,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 61.6,
-        "shift_6am_congestion": 72.7,
-        "shift_2pm_congestion": 70.3,
-        "shift_10pm_congestion": 65.3,
-        "heavy_truck_dispatch_delay_mins": 13.2
-      },
-      "satellite": {
-        "scene_id": "S2B_MSIL2A_20260824T162829_R083_T17TLG_20260824T202206",
-        "cloud_cover_pct": 6.69,
-        "yard_variance": 0.1273,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 0,
-      "sub_scores": {
-        "traffic_congestion_score": 67.8,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 0.0
-      }
-    },
-    {
-      "date": "2026-08-26",
-      "weekday": "Wednesday",
-      "composite_index": 52.1,
-      "status_label": "Moderate Activity",
-      "status_color": "#f59e0b",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-08-26",
-        "weekday": "Wednesday",
-        "avg_speed_kmh": 24.6,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 55.4,
-        "shift_6am_congestion": 65.3,
-        "shift_2pm_congestion": 63.1,
-        "shift_10pm_congestion": 58.7,
-        "heavy_truck_dispatch_delay_mins": 11.8
-      },
-      "satellite": {
-        "scene_id": "S2B_MSIL2A_20260824T162829_R083_T17TLG_20260824T202206",
-        "cloud_cover_pct": 6.69,
-        "yard_variance": 0.1273,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 0,
-      "sub_scores": {
-        "traffic_congestion_score": 60.9,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 0.0
-      }
-    },
-    {
-      "date": "2026-08-27",
-      "weekday": "Thursday",
-      "composite_index": 52.3,
-      "status_label": "Moderate Activity",
-      "status_color": "#f59e0b",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-08-27",
-        "weekday": "Thursday",
-        "avg_speed_kmh": 24.3,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 55.8,
-        "shift_6am_congestion": 65.8,
-        "shift_2pm_congestion": 63.6,
-        "shift_10pm_congestion": 59.1,
-        "heavy_truck_dispatch_delay_mins": 11.9
-      },
-      "satellite": {
-        "scene_id": "S2B_MSIL2A_20260824T162829_R083_T17TLG_20260824T202206",
-        "cloud_cover_pct": 6.69,
-        "yard_variance": 0.1273,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 0,
-      "sub_scores": {
-        "traffic_congestion_score": 61.4,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 0.0
-      }
-    },
-    {
+      "scene_id": "S2A_MSIL2A_20260828T162701_R040_T17TLG_20260829T041415",
       "date": "2026-08-28",
-      "weekday": "Friday",
-      "composite_index": 52.4,
-      "status_label": "Moderate Activity",
-      "status_color": "#f59e0b",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-08-28",
-        "weekday": "Friday",
-        "avg_speed_kmh": 24.1,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 56.2,
-        "shift_6am_congestion": 66.4,
-        "shift_2pm_congestion": 64.1,
-        "shift_10pm_congestion": 59.6,
-        "heavy_truck_dispatch_delay_mins": 12.0
-      },
-      "satellite": {
-        "scene_id": "S2A_MSIL2A_20260828T162701_R040_T17TLG_20260829T041415",
-        "cloud_cover_pct": 0.01,
-        "yard_variance": 0.13,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 0,
-      "sub_scores": {
-        "traffic_congestion_score": 61.8,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 0.0
+      "cloud_cover_pct": 0.00502,
+      "nodata_pixel_pct": 0.0,
+      "b04_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/17/T/LG/2026/08/28/S2A_MSIL2A_20260828T162701_N0512_R040_T17TLG_20260829T041415.SAFE/GRANULE/L2A_T17TLG_A058410_20260828T162743/IMG_DATA/R10m/T17TLG_20260828T162701_B04_10m.tif?st=2026-10-04T05%3A16%3A31Z&se=2026-10-05T06%3A01%3A31Z&sp=rl&sv=2025-07-05&sr=c&skoid=9c8ff44a-6a2c-4dfb-b298-1c9212f64d9a&sktid=72f988bf-86f1-41af-91ab-2d7cd011db47&skt=2026-10-05T05%3A12%3A21Z&ske=2026-10-12T05%3A12%3A21Z&sks=b&skv=2025-07-05&sig=6%2BXBShc7Rj5kzW83/9A%2Bd58OlSSU7q/atOcAOOEr96E%3D",
+      "b08_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/17/T/LG/2026/08/28/S2A_MSIL2A_20260828T162701_N0512_R040_T17TLG_20260829T041415.SAFE/GRANULE/L2A_T17TLG_A058410_20260828T162743/IMG_DATA/R10m/T17TLG_20260828T162701_B08_10m.tif?st=2026-10-04T05%3A16%3A31Z&se=2026-10-05T06%3A01%3A31Z&sp=rl&sv=2025-07-05&sr=c&skoid=9c8ff44a-6a2c-4dfb-b298-1c9212f64d9a&sktid=72f988bf-86f1-41af-91ab-2d7cd011db47&skt=2026-10-05T05%3A12%3A21Z&ske=2026-10-12T05%3A12%3A21Z&sks=b&skv=2025-07-05&sig=6%2BXBShc7Rj5kzW83/9A%2Bd58OlSSU7q/atOcAOOEr96E%3D",
+      "provenance": {
+        "source": "Microsoft Planetary Computer STAC API (sentinel-2-l2a)",
+        "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-2-l2a/items/S2A_MSIL2A_20260828T162701_R040_T17TLG_20260829T041415",
+        "retrieved_at": "2026-10-05T05:16:32Z",
+        "observed_at": "2026-08-28"
       }
     },
     {
-      "date": "2026-08-29",
-      "weekday": "Saturday",
-      "composite_index": 46.3,
-      "status_label": "Moderate Activity",
-      "status_color": "#f59e0b",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-08-29",
-        "weekday": "Saturday",
-        "avg_speed_kmh": 32.9,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 40.2,
-        "shift_6am_congestion": 47.4,
-        "shift_2pm_congestion": 45.8,
-        "shift_10pm_congestion": 42.6,
-        "heavy_truck_dispatch_delay_mins": 12.1
-      },
-      "satellite": {
-        "scene_id": "S2A_MSIL2A_20260828T162701_R040_T17TLG_20260829T041415",
-        "cloud_cover_pct": 0.01,
-        "yard_variance": 0.13,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 0,
-      "sub_scores": {
-        "traffic_congestion_score": 44.2,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 0.0
-      }
-    },
-    {
-      "date": "2026-08-30",
-      "weekday": "Sunday",
-      "composite_index": 47.5,
-      "status_label": "Moderate Activity",
-      "status_color": "#f59e0b",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-08-30",
-        "weekday": "Sunday",
-        "avg_speed_kmh": 31.2,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 43.4,
-        "shift_6am_congestion": 51.2,
-        "shift_2pm_congestion": 49.4,
-        "shift_10pm_congestion": 46.0,
-        "heavy_truck_dispatch_delay_mins": 12.8
-      },
-      "satellite": {
-        "scene_id": "S2A_MSIL2A_20260828T162701_R040_T17TLG_20260829T041415",
-        "cloud_cover_pct": 0.01,
-        "yard_variance": 0.13,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 0,
-      "sub_scores": {
-        "traffic_congestion_score": 47.7,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 0.0
-      }
-    },
-    {
-      "date": "2026-08-31",
-      "weekday": "Monday",
-      "composite_index": 54.0,
-      "status_label": "Moderate Activity",
-      "status_color": "#f59e0b",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-08-31",
-        "weekday": "Monday",
-        "avg_speed_kmh": 21.8,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 60.3,
-        "shift_6am_congestion": 71.2,
-        "shift_2pm_congestion": 68.7,
-        "shift_10pm_congestion": 63.9,
-        "heavy_truck_dispatch_delay_mins": 12.9
-      },
-      "satellite": {
-        "scene_id": "S2A_MSIL2A_20260828T162701_R040_T17TLG_20260829T041415",
-        "cloud_cover_pct": 0.01,
-        "yard_variance": 0.13,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 0,
-      "sub_scores": {
-        "traffic_congestion_score": 66.3,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 0.0
-      }
-    },
-    {
-      "date": "2026-09-01",
-      "weekday": "Tuesday",
-      "composite_index": 53.7,
-      "status_label": "Moderate Activity",
-      "status_color": "#f59e0b",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-09-01",
-        "weekday": "Tuesday",
-        "avg_speed_kmh": 22.3,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 59.4,
-        "shift_6am_congestion": 70.1,
-        "shift_2pm_congestion": 67.7,
-        "shift_10pm_congestion": 63.0,
-        "heavy_truck_dispatch_delay_mins": 12.7
-      },
-      "satellite": {
-        "scene_id": "S2A_MSIL2A_20260828T162701_R040_T17TLG_20260829T041415",
-        "cloud_cover_pct": 0.01,
-        "yard_variance": 0.13,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 0,
-      "sub_scores": {
-        "traffic_congestion_score": 65.3,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 0.0
-      }
-    },
-    {
-      "date": "2026-09-02",
-      "weekday": "Wednesday",
-      "composite_index": 53.9,
-      "status_label": "Moderate Activity",
-      "status_color": "#f59e0b",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-09-02",
-        "weekday": "Wednesday",
-        "avg_speed_kmh": 22.1,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 59.9,
-        "shift_6am_congestion": 70.6,
-        "shift_2pm_congestion": 68.2,
-        "shift_10pm_congestion": 63.4,
-        "heavy_truck_dispatch_delay_mins": 12.8
-      },
-      "satellite": {
-        "scene_id": "S2A_MSIL2A_20260828T162701_R040_T17TLG_20260829T041415",
-        "cloud_cover_pct": 0.01,
-        "yard_variance": 0.13,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 0,
-      "sub_scores": {
-        "traffic_congestion_score": 65.9,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 0.0
-      }
-    },
-    {
-      "date": "2026-09-03",
-      "weekday": "Thursday",
-      "composite_index": 54.0,
-      "status_label": "Moderate Activity",
-      "status_color": "#f59e0b",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-09-03",
-        "weekday": "Thursday",
-        "avg_speed_kmh": 21.8,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 60.3,
-        "shift_6am_congestion": 71.2,
-        "shift_2pm_congestion": 68.7,
-        "shift_10pm_congestion": 63.9,
-        "heavy_truck_dispatch_delay_mins": 12.9
-      },
-      "satellite": {
-        "scene_id": "S2A_MSIL2A_20260828T162701_R040_T17TLG_20260829T041415",
-        "cloud_cover_pct": 0.01,
-        "yard_variance": 0.13,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 0,
-      "sub_scores": {
-        "traffic_congestion_score": 66.3,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 0.0
-      }
-    },
-    {
-      "date": "2026-09-04",
-      "weekday": "Friday",
-      "composite_index": 54.2,
-      "status_label": "Moderate Activity",
-      "status_color": "#f59e0b",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-09-04",
-        "weekday": "Friday",
-        "avg_speed_kmh": 21.6,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 60.8,
-        "shift_6am_congestion": 71.7,
-        "shift_2pm_congestion": 69.3,
-        "shift_10pm_congestion": 64.4,
-        "heavy_truck_dispatch_delay_mins": 13.0
-      },
-      "satellite": {
-        "scene_id": "S2A_MSIL2A_20260828T162701_R040_T17TLG_20260829T041415",
-        "cloud_cover_pct": 0.01,
-        "yard_variance": 0.13,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 0,
-      "sub_scores": {
-        "traffic_congestion_score": 66.9,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 0.0
-      }
-    },
-    {
-      "date": "2026-09-05",
-      "weekday": "Saturday",
-      "composite_index": 48.0,
-      "status_label": "Moderate Activity",
-      "status_color": "#f59e0b",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-09-05",
-        "weekday": "Saturday",
-        "avg_speed_kmh": 30.4,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 44.7,
-        "shift_6am_congestion": 52.7,
-        "shift_2pm_congestion": 51.0,
-        "shift_10pm_congestion": 47.4,
-        "heavy_truck_dispatch_delay_mins": 13.1
-      },
-      "satellite": {
-        "scene_id": "S2A_MSIL2A_20260828T162701_R040_T17TLG_20260829T041415",
-        "cloud_cover_pct": 0.01,
-        "yard_variance": 0.13,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 0,
-      "sub_scores": {
-        "traffic_congestion_score": 49.2,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 0.0
-      }
-    },
-    {
-      "date": "2026-09-06",
-      "weekday": "Sunday",
-      "composite_index": 48.2,
-      "status_label": "Moderate Activity",
-      "status_color": "#f59e0b",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-09-06",
-        "weekday": "Sunday",
-        "avg_speed_kmh": 30.2,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 45.1,
-        "shift_6am_congestion": 53.3,
-        "shift_2pm_congestion": 51.5,
-        "shift_10pm_congestion": 47.9,
-        "heavy_truck_dispatch_delay_mins": 13.2
-      },
-      "satellite": {
-        "scene_id": "S2A_MSIL2A_20260828T162701_R040_T17TLG_20260829T041415",
-        "cloud_cover_pct": 0.01,
-        "yard_variance": 0.13,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 0,
-      "sub_scores": {
-        "traffic_congestion_score": 49.6,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 0.0
-      }
-    },
-    {
-      "date": "2026-09-07",
-      "weekday": "Monday",
-      "composite_index": 52.1,
-      "status_label": "Moderate Activity",
-      "status_color": "#f59e0b",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-09-07",
-        "weekday": "Monday",
-        "avg_speed_kmh": 24.6,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 55.4,
-        "shift_6am_congestion": 65.3,
-        "shift_2pm_congestion": 63.1,
-        "shift_10pm_congestion": 58.7,
-        "heavy_truck_dispatch_delay_mins": 11.8
-      },
-      "satellite": {
-        "scene_id": "S2A_MSIL2A_20260828T162701_R040_T17TLG_20260829T041415",
-        "cloud_cover_pct": 0.01,
-        "yard_variance": 0.13,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 0,
-      "sub_scores": {
-        "traffic_congestion_score": 60.9,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 0.0
-      }
-    },
-    {
-      "date": "2026-09-08",
-      "weekday": "Tuesday",
-      "composite_index": 55.2,
-      "status_label": "Optimal Production & Logistics Flow",
-      "status_color": "#38bdf8",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-09-08",
-        "weekday": "Tuesday",
-        "avg_speed_kmh": 24.3,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 55.8,
-        "shift_6am_congestion": 65.8,
-        "shift_2pm_congestion": 63.6,
-        "shift_10pm_congestion": 59.1,
-        "heavy_truck_dispatch_delay_mins": 11.9
-      },
-      "satellite": {
-        "scene_id": "S2A_MSIL2A_20260828T162701_R040_T17TLG_20260829T041415",
-        "cloud_cover_pct": 0.01,
-        "yard_variance": 0.13,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 29.4,
-      "sub_scores": {
-        "traffic_congestion_score": 61.4,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 9.8
-      }
-    },
-    {
-      "date": "2026-09-09",
-      "weekday": "Wednesday",
-      "composite_index": 55.4,
-      "status_label": "Optimal Production & Logistics Flow",
-      "status_color": "#38bdf8",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-09-09",
-        "weekday": "Wednesday",
-        "avg_speed_kmh": 24.1,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 56.2,
-        "shift_6am_congestion": 66.4,
-        "shift_2pm_congestion": 64.1,
-        "shift_10pm_congestion": 59.6,
-        "heavy_truck_dispatch_delay_mins": 12.0
-      },
-      "satellite": {
-        "scene_id": "S2A_MSIL2A_20260828T162701_R040_T17TLG_20260829T041415",
-        "cloud_cover_pct": 0.01,
-        "yard_variance": 0.13,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 29.4,
-      "sub_scores": {
-        "traffic_congestion_score": 61.8,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 9.8
-      }
-    },
-    {
-      "date": "2026-09-10",
-      "weekday": "Thursday",
-      "composite_index": 56.6,
-      "status_label": "Optimal Production & Logistics Flow",
-      "status_color": "#38bdf8",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-09-10",
-        "weekday": "Thursday",
-        "avg_speed_kmh": 22.3,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 59.4,
-        "shift_6am_congestion": 70.1,
-        "shift_2pm_congestion": 67.7,
-        "shift_10pm_congestion": 63.0,
-        "heavy_truck_dispatch_delay_mins": 12.7
-      },
-      "satellite": {
-        "scene_id": "S2A_MSIL2A_20260828T162701_R040_T17TLG_20260829T041415",
-        "cloud_cover_pct": 0.01,
-        "yard_variance": 0.13,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 29.4,
-      "sub_scores": {
-        "traffic_congestion_score": 65.3,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 9.8
-      }
-    },
-    {
-      "date": "2026-09-11",
-      "weekday": "Friday",
-      "composite_index": 56.8,
-      "status_label": "Optimal Production & Logistics Flow",
-      "status_color": "#38bdf8",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-09-11",
-        "weekday": "Friday",
-        "avg_speed_kmh": 22.1,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 59.9,
-        "shift_6am_congestion": 70.6,
-        "shift_2pm_congestion": 68.2,
-        "shift_10pm_congestion": 63.4,
-        "heavy_truck_dispatch_delay_mins": 12.8
-      },
-      "satellite": {
-        "scene_id": "S2A_MSIL2A_20260828T162701_R040_T17TLG_20260829T041415",
-        "cloud_cover_pct": 0.01,
-        "yard_variance": 0.13,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 29.4,
-      "sub_scores": {
-        "traffic_congestion_score": 65.9,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 9.8
-      }
-    },
-    {
-      "date": "2026-09-12",
-      "weekday": "Saturday",
-      "composite_index": 50.6,
-      "status_label": "Moderate Activity",
-      "status_color": "#f59e0b",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-09-12",
-        "weekday": "Saturday",
-        "avg_speed_kmh": 30.9,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 43.8,
-        "shift_6am_congestion": 51.7,
-        "shift_2pm_congestion": 49.9,
-        "shift_10pm_congestion": 46.4,
-        "heavy_truck_dispatch_delay_mins": 12.9
-      },
-      "satellite": {
-        "scene_id": "S2A_MSIL2A_20260828T162701_R040_T17TLG_20260829T041415",
-        "cloud_cover_pct": 0.01,
-        "yard_variance": 0.13,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 29.4,
-      "sub_scores": {
-        "traffic_congestion_score": 48.2,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 9.8
-      }
-    },
-    {
-      "date": "2026-09-13",
-      "weekday": "Sunday",
-      "composite_index": 50.8,
-      "status_label": "Moderate Activity",
-      "status_color": "#f59e0b",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-09-13",
-        "weekday": "Sunday",
-        "avg_speed_kmh": 30.7,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 44.2,
-        "shift_6am_congestion": 52.2,
-        "shift_2pm_congestion": 50.4,
-        "shift_10pm_congestion": 46.9,
-        "heavy_truck_dispatch_delay_mins": 13.0
-      },
-      "satellite": {
-        "scene_id": "S2A_MSIL2A_20260828T162701_R040_T17TLG_20260829T041415",
-        "cloud_cover_pct": 0.01,
-        "yard_variance": 0.13,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 29.4,
-      "sub_scores": {
-        "traffic_congestion_score": 48.6,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 9.8
-      }
-    },
-    {
-      "date": "2026-09-14",
-      "weekday": "Monday",
-      "composite_index": 57.3,
-      "status_label": "Optimal Production & Logistics Flow",
-      "status_color": "#38bdf8",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-09-14",
-        "weekday": "Monday",
-        "avg_speed_kmh": 21.3,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 61.2,
-        "shift_6am_congestion": 72.2,
-        "shift_2pm_congestion": 69.8,
-        "shift_10pm_congestion": 64.9,
-        "heavy_truck_dispatch_delay_mins": 13.1
-      },
-      "satellite": {
-        "scene_id": "S2A_MSIL2A_20260828T162701_R040_T17TLG_20260829T041415",
-        "cloud_cover_pct": 0.01,
-        "yard_variance": 0.13,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 29.4,
-      "sub_scores": {
-        "traffic_congestion_score": 67.3,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 9.8
-      }
-    },
-    {
-      "date": "2026-09-15",
-      "weekday": "Tuesday",
-      "composite_index": 59.6,
-      "status_label": "Optimal Production & Logistics Flow",
-      "status_color": "#38bdf8",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-09-15",
-        "weekday": "Tuesday",
-        "avg_speed_kmh": 21.1,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 61.6,
-        "shift_6am_congestion": 72.7,
-        "shift_2pm_congestion": 70.3,
-        "shift_10pm_congestion": 65.3,
-        "heavy_truck_dispatch_delay_mins": 13.2
-      },
-      "satellite": {
-        "scene_id": "S2A_MSIL2A_20260828T162701_R040_T17TLG_20260829T041415",
-        "cloud_cover_pct": 0.01,
-        "yard_variance": 0.13,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 50.4,
-      "sub_scores": {
-        "traffic_congestion_score": 67.8,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 16.8
-      }
-    },
-    {
-      "date": "2026-09-16",
-      "weekday": "Wednesday",
-      "composite_index": 57.2,
-      "status_label": "Optimal Production & Logistics Flow",
-      "status_color": "#38bdf8",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-09-16",
-        "weekday": "Wednesday",
-        "avg_speed_kmh": 24.6,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 55.4,
-        "shift_6am_congestion": 65.3,
-        "shift_2pm_congestion": 63.1,
-        "shift_10pm_congestion": 58.7,
-        "heavy_truck_dispatch_delay_mins": 11.8
-      },
-      "satellite": {
-        "scene_id": "S2A_MSIL2A_20260828T162701_R040_T17TLG_20260829T041415",
-        "cloud_cover_pct": 0.01,
-        "yard_variance": 0.13,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 50.4,
-      "sub_scores": {
-        "traffic_congestion_score": 60.9,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 16.8
-      }
-    },
-    {
-      "date": "2026-09-17",
-      "weekday": "Thursday",
-      "composite_index": 57.3,
-      "status_label": "Optimal Production & Logistics Flow",
-      "status_color": "#38bdf8",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-09-17",
-        "weekday": "Thursday",
-        "avg_speed_kmh": 24.3,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 55.8,
-        "shift_6am_congestion": 65.8,
-        "shift_2pm_congestion": 63.6,
-        "shift_10pm_congestion": 59.1,
-        "heavy_truck_dispatch_delay_mins": 11.9
-      },
-      "satellite": {
-        "scene_id": "S2A_MSIL2A_20260828T162701_R040_T17TLG_20260829T041415",
-        "cloud_cover_pct": 0.01,
-        "yard_variance": 0.13,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 50.4,
-      "sub_scores": {
-        "traffic_congestion_score": 61.4,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 16.8
-      }
-    },
-    {
+      "scene_id": "S2C_MSIL2A_20260918T162941_R083_T17TLG_20260918T194414",
       "date": "2026-09-18",
-      "weekday": "Friday",
-      "composite_index": 57.5,
-      "status_label": "Optimal Production & Logistics Flow",
-      "status_color": "#38bdf8",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-09-18",
-        "weekday": "Friday",
-        "avg_speed_kmh": 24.1,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 56.2,
-        "shift_6am_congestion": 66.4,
-        "shift_2pm_congestion": 64.1,
-        "shift_10pm_congestion": 59.6,
-        "heavy_truck_dispatch_delay_mins": 12.0
-      },
-      "satellite": {
-        "scene_id": "S2C_MSIL2A_20260918T162941_R083_T17TLG_20260918T194414",
-        "cloud_cover_pct": 25.82,
-        "yard_variance": 0.1197,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 50.4,
-      "sub_scores": {
-        "traffic_congestion_score": 61.8,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 16.8
+      "cloud_cover_pct": 25.815225,
+      "nodata_pixel_pct": 95.22689,
+      "b04_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/17/T/LG/2026/09/18/S2C_MSIL2A_20260918T162941_N0512_R083_T17TLG_20260918T194414.SAFE/GRANULE/L2A_T17TLG_A010635_20260918T163637/IMG_DATA/R10m/T17TLG_20260918T162941_B04_10m.tif?st=2026-10-04T05%3A16%3A31Z&se=2026-10-05T06%3A01%3A31Z&sp=rl&sv=2025-07-05&sr=c&skoid=9c8ff44a-6a2c-4dfb-b298-1c9212f64d9a&sktid=72f988bf-86f1-41af-91ab-2d7cd011db47&skt=2026-10-05T05%3A12%3A21Z&ske=2026-10-12T05%3A12%3A21Z&sks=b&skv=2025-07-05&sig=6%2BXBShc7Rj5kzW83/9A%2Bd58OlSSU7q/atOcAOOEr96E%3D",
+      "b08_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/17/T/LG/2026/09/18/S2C_MSIL2A_20260918T162941_N0512_R083_T17TLG_20260918T194414.SAFE/GRANULE/L2A_T17TLG_A010635_20260918T163637/IMG_DATA/R10m/T17TLG_20260918T162941_B08_10m.tif?st=2026-10-04T05%3A16%3A31Z&se=2026-10-05T06%3A01%3A31Z&sp=rl&sv=2025-07-05&sr=c&skoid=9c8ff44a-6a2c-4dfb-b298-1c9212f64d9a&sktid=72f988bf-86f1-41af-91ab-2d7cd011db47&skt=2026-10-05T05%3A12%3A21Z&ske=2026-10-12T05%3A12%3A21Z&sks=b&skv=2025-07-05&sig=6%2BXBShc7Rj5kzW83/9A%2Bd58OlSSU7q/atOcAOOEr96E%3D",
+      "provenance": {
+        "source": "Microsoft Planetary Computer STAC API (sentinel-2-l2a)",
+        "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-2-l2a/items/S2C_MSIL2A_20260918T162941_R083_T17TLG_20260918T194414",
+        "retrieved_at": "2026-10-05T05:16:32Z",
+        "observed_at": "2026-09-18"
       }
     },
     {
-      "date": "2026-09-19",
-      "weekday": "Saturday",
-      "composite_index": 51.3,
-      "status_label": "Moderate Activity",
-      "status_color": "#f59e0b",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-09-19",
-        "weekday": "Saturday",
-        "avg_speed_kmh": 32.9,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 40.2,
-        "shift_6am_congestion": 47.4,
-        "shift_2pm_congestion": 45.8,
-        "shift_10pm_congestion": 42.6,
-        "heavy_truck_dispatch_delay_mins": 12.1
-      },
-      "satellite": {
-        "scene_id": "S2C_MSIL2A_20260918T162941_R083_T17TLG_20260918T194414",
-        "cloud_cover_pct": 25.82,
-        "yard_variance": 0.1197,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 50.4,
-      "sub_scores": {
-        "traffic_congestion_score": 44.2,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 16.8
-      }
-    },
-    {
-      "date": "2026-09-20",
-      "weekday": "Sunday",
-      "composite_index": 53.8,
-      "status_label": "Moderate Activity",
-      "status_color": "#f59e0b",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-09-20",
-        "weekday": "Sunday",
-        "avg_speed_kmh": 31.2,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 43.4,
-        "shift_6am_congestion": 51.2,
-        "shift_2pm_congestion": 49.4,
-        "shift_10pm_congestion": 46.0,
-        "heavy_truck_dispatch_delay_mins": 12.8
-      },
-      "satellite": {
-        "scene_id": "S2C_MSIL2A_20260918T162941_R083_T17TLG_20260918T194414",
-        "cloud_cover_pct": 25.82,
-        "yard_variance": 0.1197,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 63.2,
-      "sub_scores": {
-        "traffic_congestion_score": 47.7,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 21.1
-      }
-    },
-    {
-      "date": "2026-09-21",
-      "weekday": "Monday",
-      "composite_index": 60.3,
-      "status_label": "Optimal Production & Logistics Flow",
-      "status_color": "#38bdf8",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-09-21",
-        "weekday": "Monday",
-        "avg_speed_kmh": 21.8,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 60.3,
-        "shift_6am_congestion": 71.2,
-        "shift_2pm_congestion": 68.7,
-        "shift_10pm_congestion": 63.9,
-        "heavy_truck_dispatch_delay_mins": 12.9
-      },
-      "satellite": {
-        "scene_id": "S2C_MSIL2A_20260918T162941_R083_T17TLG_20260918T194414",
-        "cloud_cover_pct": 25.82,
-        "yard_variance": 0.1197,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 63.2,
-      "sub_scores": {
-        "traffic_congestion_score": 66.3,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 21.1
-      }
-    },
-    {
-      "date": "2026-09-22",
-      "weekday": "Tuesday",
-      "composite_index": 60.5,
-      "status_label": "Optimal Production & Logistics Flow",
-      "status_color": "#38bdf8",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-09-22",
-        "weekday": "Tuesday",
-        "avg_speed_kmh": 21.6,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 60.8,
-        "shift_6am_congestion": 71.7,
-        "shift_2pm_congestion": 69.3,
-        "shift_10pm_congestion": 64.4,
-        "heavy_truck_dispatch_delay_mins": 13.0
-      },
-      "satellite": {
-        "scene_id": "S2C_MSIL2A_20260918T162941_R083_T17TLG_20260918T194414",
-        "cloud_cover_pct": 25.82,
-        "yard_variance": 0.1197,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 63.2,
-      "sub_scores": {
-        "traffic_congestion_score": 66.9,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 21.1
-      }
-    },
-    {
-      "date": "2026-09-23",
-      "weekday": "Wednesday",
-      "composite_index": 60.7,
-      "status_label": "Optimal Production & Logistics Flow",
-      "status_color": "#38bdf8",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-09-23",
-        "weekday": "Wednesday",
-        "avg_speed_kmh": 21.3,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 61.2,
-        "shift_6am_congestion": 72.2,
-        "shift_2pm_congestion": 69.8,
-        "shift_10pm_congestion": 64.9,
-        "heavy_truck_dispatch_delay_mins": 13.1
-      },
-      "satellite": {
-        "scene_id": "S2C_MSIL2A_20260918T162941_R083_T17TLG_20260918T194414",
-        "cloud_cover_pct": 25.82,
-        "yard_variance": 0.1197,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 63.2,
-      "sub_scores": {
-        "traffic_congestion_score": 67.3,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 21.1
-      }
-    },
-    {
-      "date": "2026-09-24",
-      "weekday": "Thursday",
-      "composite_index": 63.3,
-      "status_label": "Optimal Production & Logistics Flow",
-      "status_color": "#38bdf8",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-09-24",
-        "weekday": "Thursday",
-        "avg_speed_kmh": 21.1,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 61.6,
-        "shift_6am_congestion": 72.7,
-        "shift_2pm_congestion": 70.3,
-        "shift_10pm_congestion": 65.3,
-        "heavy_truck_dispatch_delay_mins": 13.2
-      },
-      "satellite": {
-        "scene_id": "S2C_MSIL2A_20260918T162941_R083_T17TLG_20260918T194414",
-        "cloud_cover_pct": 25.82,
-        "yard_variance": 0.1197,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 87.4,
-      "sub_scores": {
-        "traffic_congestion_score": 67.8,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 29.1
-      }
-    },
-    {
-      "date": "2026-09-25",
-      "weekday": "Friday",
-      "composite_index": 60.9,
-      "status_label": "Optimal Production & Logistics Flow",
-      "status_color": "#38bdf8",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-09-25",
-        "weekday": "Friday",
-        "avg_speed_kmh": 24.6,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 55.4,
-        "shift_6am_congestion": 65.3,
-        "shift_2pm_congestion": 63.1,
-        "shift_10pm_congestion": 58.7,
-        "heavy_truck_dispatch_delay_mins": 11.8
-      },
-      "satellite": {
-        "scene_id": "S2C_MSIL2A_20260918T162941_R083_T17TLG_20260918T194414",
-        "cloud_cover_pct": 25.82,
-        "yard_variance": 0.1197,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 87.4,
-      "sub_scores": {
-        "traffic_congestion_score": 60.9,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 29.1
-      }
-    },
-    {
-      "date": "2026-09-26",
-      "weekday": "Saturday",
-      "composite_index": 54.7,
-      "status_label": "Moderate Activity",
-      "status_color": "#f59e0b",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-09-26",
-        "weekday": "Saturday",
-        "avg_speed_kmh": 33.4,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 39.3,
-        "shift_6am_congestion": 46.4,
-        "shift_2pm_congestion": 44.8,
-        "shift_10pm_congestion": 41.7,
-        "heavy_truck_dispatch_delay_mins": 11.9
-      },
-      "satellite": {
-        "scene_id": "S2C_MSIL2A_20260918T162941_R083_T17TLG_20260918T194414",
-        "cloud_cover_pct": 25.82,
-        "yard_variance": 0.1197,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 87.4,
-      "sub_scores": {
-        "traffic_congestion_score": 43.2,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 29.1
-      }
-    },
-    {
-      "date": "2026-09-27",
-      "weekday": "Sunday",
-      "composite_index": 54.9,
-      "status_label": "Moderate Activity",
-      "status_color": "#f59e0b",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-09-27",
-        "weekday": "Sunday",
-        "avg_speed_kmh": 33.1,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 39.8,
-        "shift_6am_congestion": 46.9,
-        "shift_2pm_congestion": 45.3,
-        "shift_10pm_congestion": 42.1,
-        "heavy_truck_dispatch_delay_mins": 12.0
-      },
-      "satellite": {
-        "scene_id": "S2C_MSIL2A_20260918T162941_R083_T17TLG_20260918T194414",
-        "cloud_cover_pct": 25.82,
-        "yard_variance": 0.1197,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 87.4,
-      "sub_scores": {
-        "traffic_congestion_score": 43.8,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 29.1
-      }
-    },
-    {
+      "scene_id": "S2C_MSIL2A_20260928T163051_R083_T17TLG_20260928T200725",
       "date": "2026-09-28",
-      "weekday": "Monday",
-      "composite_index": 63.2,
-      "status_label": "Optimal Production & Logistics Flow",
-      "status_color": "#38bdf8",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-09-28",
-        "weekday": "Monday",
-        "avg_speed_kmh": 23.8,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 56.7,
-        "shift_6am_congestion": 66.9,
-        "shift_2pm_congestion": 64.6,
-        "shift_10pm_congestion": 60.1,
-        "heavy_truck_dispatch_delay_mins": 12.1
-      },
-      "satellite": {
-        "scene_id": "S2C_MSIL2A_20260928T163051_R083_T17TLG_20260928T200725",
-        "cloud_cover_pct": 0.78,
-        "yard_variance": 0.1297,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 105.9,
-      "sub_scores": {
-        "traffic_congestion_score": 62.4,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 35.3
-      }
-    },
-    {
-      "date": "2026-09-29",
-      "weekday": "Tuesday",
-      "composite_index": 63.4,
-      "status_label": "Optimal Production & Logistics Flow",
-      "status_color": "#38bdf8",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-09-29",
-        "weekday": "Tuesday",
-        "avg_speed_kmh": 23.6,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 57.1,
-        "shift_6am_congestion": 67.4,
-        "shift_2pm_congestion": 65.2,
-        "shift_10pm_congestion": 60.6,
-        "heavy_truck_dispatch_delay_mins": 12.2
-      },
-      "satellite": {
-        "scene_id": "S2C_MSIL2A_20260928T163051_R083_T17TLG_20260928T200725",
-        "cloud_cover_pct": 0.78,
-        "yard_variance": 0.1297,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 105.9,
-      "sub_scores": {
-        "traffic_congestion_score": 62.8,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 35.3
-      }
-    },
-    {
-      "date": "2026-09-30",
-      "weekday": "Wednesday",
-      "composite_index": 64.6,
-      "status_label": "Optimal Production & Logistics Flow",
-      "status_color": "#38bdf8",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-09-30",
-        "weekday": "Wednesday",
-        "avg_speed_kmh": 21.8,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 60.3,
-        "shift_6am_congestion": 71.2,
-        "shift_2pm_congestion": 68.7,
-        "shift_10pm_congestion": 63.9,
-        "heavy_truck_dispatch_delay_mins": 12.9
-      },
-      "satellite": {
-        "scene_id": "S2C_MSIL2A_20260928T163051_R083_T17TLG_20260928T200725",
-        "cloud_cover_pct": 0.78,
-        "yard_variance": 0.1297,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 105.9,
-      "sub_scores": {
-        "traffic_congestion_score": 66.3,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 35.3
-      }
-    },
-    {
-      "date": "2026-10-01",
-      "weekday": "Thursday",
-      "composite_index": 62.9,
-      "status_label": "Optimal Production & Logistics Flow",
-      "status_color": "#38bdf8",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-10-01",
-        "weekday": "Thursday",
-        "avg_speed_kmh": 24.3,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 55.8,
-        "shift_6am_congestion": 65.8,
-        "shift_2pm_congestion": 63.6,
-        "shift_10pm_congestion": 59.1,
-        "heavy_truck_dispatch_delay_mins": 11.9
-      },
-      "satellite": {
-        "scene_id": "S2C_MSIL2A_20260928T163051_R083_T17TLG_20260928T200725",
-        "cloud_cover_pct": 0.78,
-        "yard_variance": 0.1297,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 105.9,
-      "sub_scores": {
-        "traffic_congestion_score": 61.4,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 35.3
-      }
-    },
-    {
-      "date": "2026-10-02",
-      "weekday": "Friday",
-      "composite_index": 63.0,
-      "status_label": "Optimal Production & Logistics Flow",
-      "status_color": "#38bdf8",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-10-02",
-        "weekday": "Friday",
-        "avg_speed_kmh": 24.1,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 56.2,
-        "shift_6am_congestion": 66.4,
-        "shift_2pm_congestion": 64.1,
-        "shift_10pm_congestion": 59.6,
-        "heavy_truck_dispatch_delay_mins": 12.0
-      },
-      "satellite": {
-        "scene_id": "S2C_MSIL2A_20260928T163051_R083_T17TLG_20260928T200725",
-        "cloud_cover_pct": 0.78,
-        "yard_variance": 0.1297,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 105.9,
-      "sub_scores": {
-        "traffic_congestion_score": 61.8,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 35.3
-      }
-    },
-    {
-      "date": "2026-10-03",
-      "weekday": "Saturday",
-      "composite_index": 56.9,
-      "status_label": "Optimal Production & Logistics Flow",
-      "status_color": "#38bdf8",
-      "traffic": {
-        "facility_key": "aerostar",
-        "date": "2026-10-03",
-        "weekday": "Saturday",
-        "avg_speed_kmh": 32.9,
-        "free_flow_speed_kmh": 55.0,
-        "congestion_index": 40.2,
-        "shift_6am_congestion": 47.4,
-        "shift_2pm_congestion": 45.8,
-        "shift_10pm_congestion": 42.6,
-        "heavy_truck_dispatch_delay_mins": 12.1
-      },
-      "satellite": {
-        "scene_id": "S2C_MSIL2A_20260928T163051_R083_T17TLG_20260928T200725",
-        "cloud_cover_pct": 0.78,
-        "yard_variance": 0.1297,
-        "yard_utilization_pct": 76.0,
-        "estimated_trailers": 28
-      },
-      "manifest_rolling_30d_mt": 105.9,
-      "sub_scores": {
-        "traffic_congestion_score": 44.2,
-        "satellite_activity_score": 88.0,
-        "export_velocity_score": 35.3
+      "cloud_cover_pct": 0.7813,
+      "nodata_pixel_pct": 95.370394,
+      "b04_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/17/T/LG/2026/09/28/S2C_MSIL2A_20260928T163051_N0513_R083_T17TLG_20260928T200725.SAFE/GRANULE/L2A_T17TLG_A010778_20260928T163048/IMG_DATA/R10m/T17TLG_20260928T163051_B04_10m.tif?st=2026-10-04T05%3A16%3A31Z&se=2026-10-05T06%3A01%3A31Z&sp=rl&sv=2025-07-05&sr=c&skoid=9c8ff44a-6a2c-4dfb-b298-1c9212f64d9a&sktid=72f988bf-86f1-41af-91ab-2d7cd011db47&skt=2026-10-05T05%3A12%3A21Z&ske=2026-10-12T05%3A12%3A21Z&sks=b&skv=2025-07-05&sig=6%2BXBShc7Rj5kzW83/9A%2Bd58OlSSU7q/atOcAOOEr96E%3D",
+      "b08_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/17/T/LG/2026/09/28/S2C_MSIL2A_20260928T163051_N0513_R083_T17TLG_20260928T200725.SAFE/GRANULE/L2A_T17TLG_A010778_20260928T163048/IMG_DATA/R10m/T17TLG_20260928T163051_B08_10m.tif?st=2026-10-04T05%3A16%3A31Z&se=2026-10-05T06%3A01%3A31Z&sp=rl&sv=2025-07-05&sr=c&skoid=9c8ff44a-6a2c-4dfb-b298-1c9212f64d9a&sktid=72f988bf-86f1-41af-91ab-2d7cd011db47&skt=2026-10-05T05%3A12%3A21Z&ske=2026-10-12T05%3A12%3A21Z&sks=b&skv=2025-07-05&sig=6%2BXBShc7Rj5kzW83/9A%2Bd58OlSSU7q/atOcAOOEr96E%3D",
+      "provenance": {
+        "source": "Microsoft Planetary Computer STAC API (sentinel-2-l2a)",
+        "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-2-l2a/items/S2C_MSIL2A_20260928T163051_R083_T17TLG_20260928T200725",
+        "retrieved_at": "2026-10-05T05:16:32Z",
+        "observed_at": "2026-09-28"
       }
     }
   ],
   "manifests": {
-    "summary": {
-      "facility_key": "aerostar",
-      "bol_count": 5,
-      "total_weight_mt": 105.9,
-      "total_teus": 12,
-      "destinations": {
-        "Detroit Gateway": 63.7,
-        "Other Entry Ports": 42.2
-      },
-      "products": {
-        "Precision CNC Machined Engine Brackets & Mounts": 18.5,
-        "Cast Aluminum Transmission Housings & Covers": 24.2,
-        "Defense Precision Structural Machined Parts": 12.8,
-        "Engine Flywheels, Pulleys & Drivetrain Components": 21.0,
-        "Heavy Truck Chassis Brackets & Crossmembers": 29.4
-      },
-      "sec_telemetry": {
-        "company_name": "AEROSTAR MANUFACTURING",
-        "ticker": "PRIVATE",
-        "facility_location": "28275 Northline Rd, Romulus, MI 48174",
-        "sic_description": "PRECISION CNC MACHINING & FABRICATION",
-        "latest_inventory_usd": 42500000.0,
-        "latest_quarterly_revenue_usd": 68000000.0
-      },
-      "records": [
-        {
-          "bol_id": "BOL-AERO-2026-0928-CNC",
-          "date": "2026-09-28",
-          "shipper": "Aerostar Manufacturing HQ (28275 Northline Rd, Romulus, MI)",
-          "consignee": "Ford Motor Co. Dearborn Truck Plant",
-          "origin_port": "Romulus Logistics Yard / I-94 Corridor",
-          "destination_port": "Detroit Assembly Gateway (Dearborn, MI)",
-          "hts_code": "8409.91.99",
-          "product_category": "Precision CNC Machined Engine Brackets & Mounts",
-          "weight_mt": 18.5,
-          "teu_count": 2,
-          "transport_mode": "Direct Express Freight Truck",
-          "sec_source": "Michigan Manufacturing Registry"
-        },
-        {
-          "bol_id": "BOL-AERO-2026-0924-CNC",
-          "date": "2026-09-24",
-          "shipper": "Aerostar Manufacturing Romulus Plant",
-          "consignee": "General Motors Assembly (Factory ZERO Hamtramck)",
-          "origin_port": "Romulus Northline Facility",
-          "destination_port": "Detroit Gateway",
-          "hts_code": "8708.40.11",
-          "product_category": "Cast Aluminum Transmission Housings & Covers",
-          "weight_mt": 24.2,
-          "teu_count": 3,
-          "transport_mode": "Dedicated Chassis Trailer",
-          "sec_source": "Automotive OEM Supply Contract"
-        },
-        {
-          "bol_id": "BOL-AERO-2026-0920-DEF",
-          "date": "2026-09-20",
-          "shipper": "Aerostar Manufacturing Precision Division",
-          "consignee": "General Dynamics Land Systems Center",
-          "origin_port": "Detroit Metro Airport Hub",
-          "destination_port": "Sterling Heights / Dallas Defense Park",
-          "hts_code": "8807.30.00",
-          "product_category": "Defense Precision Structural Machined Parts",
-          "weight_mt": 12.8,
-          "teu_count": 1,
-          "transport_mode": "Air/Road Secure Express",
-          "sec_source": "Defense Logistics Dispatch"
-        },
-        {
-          "bol_id": "BOL-AERO-2026-0915-CNC",
-          "date": "2026-09-15",
-          "shipper": "Aerostar Manufacturing HQ",
-          "consignee": "Stellantis Jefferson North Assembly Plant",
-          "origin_port": "Romulus Industrial Park",
-          "destination_port": "Detroit Gateway",
-          "hts_code": "8483.50.90",
-          "product_category": "Engine Flywheels, Pulleys & Drivetrain Components",
-          "weight_mt": 21.0,
-          "teu_count": 2,
-          "transport_mode": "Overland Freight",
-          "sec_source": "Detroit Automotive Supply Chain"
-        },
-        {
-          "bol_id": "BOL-AERO-2026-0908-TRK",
-          "date": "2026-09-08",
-          "shipper": "Aerostar Manufacturing Commercial Division",
-          "consignee": "PACCAR Commercial Heavy Truck Assembly",
-          "origin_port": "Romulus Logistics Hub",
-          "destination_port": "Louisville / Chicago Freight Gateway",
-          "hts_code": "8708.99.81",
-          "product_category": "Heavy Truck Chassis Brackets & Crossmembers",
-          "weight_mt": 29.4,
-          "teu_count": 4,
-          "transport_mode": "Intermodal Express",
-          "sec_source": "Commercial Vehicle Component Supply"
-        }
-      ]
-    },
-    "records": [
-      {
-        "bol_id": "BOL-AERO-2026-0928-CNC",
-        "date": "2026-09-28",
-        "shipper": "Aerostar Manufacturing HQ (28275 Northline Rd, Romulus, MI)",
-        "consignee": "Ford Motor Co. Dearborn Truck Plant",
-        "origin_port": "Romulus Logistics Yard / I-94 Corridor",
-        "destination_port": "Detroit Assembly Gateway (Dearborn, MI)",
-        "hts_code": "8409.91.99",
-        "product_category": "Precision CNC Machined Engine Brackets & Mounts",
-        "weight_mt": 18.5,
-        "teu_count": 2,
-        "transport_mode": "Direct Express Freight Truck",
-        "sec_source": "Michigan Manufacturing Registry"
-      },
-      {
-        "bol_id": "BOL-AERO-2026-0924-CNC",
-        "date": "2026-09-24",
-        "shipper": "Aerostar Manufacturing Romulus Plant",
-        "consignee": "General Motors Assembly (Factory ZERO Hamtramck)",
-        "origin_port": "Romulus Northline Facility",
-        "destination_port": "Detroit Gateway",
-        "hts_code": "8708.40.11",
-        "product_category": "Cast Aluminum Transmission Housings & Covers",
-        "weight_mt": 24.2,
-        "teu_count": 3,
-        "transport_mode": "Dedicated Chassis Trailer",
-        "sec_source": "Automotive OEM Supply Contract"
-      },
-      {
-        "bol_id": "BOL-AERO-2026-0920-DEF",
-        "date": "2026-09-20",
-        "shipper": "Aerostar Manufacturing Precision Division",
-        "consignee": "General Dynamics Land Systems Center",
-        "origin_port": "Detroit Metro Airport Hub",
-        "destination_port": "Sterling Heights / Dallas Defense Park",
-        "hts_code": "8807.30.00",
-        "product_category": "Defense Precision Structural Machined Parts",
-        "weight_mt": 12.8,
-        "teu_count": 1,
-        "transport_mode": "Air/Road Secure Express",
-        "sec_source": "Defense Logistics Dispatch"
-      },
-      {
-        "bol_id": "BOL-AERO-2026-0915-CNC",
-        "date": "2026-09-15",
-        "shipper": "Aerostar Manufacturing HQ",
-        "consignee": "Stellantis Jefferson North Assembly Plant",
-        "origin_port": "Romulus Industrial Park",
-        "destination_port": "Detroit Gateway",
-        "hts_code": "8483.50.90",
-        "product_category": "Engine Flywheels, Pulleys & Drivetrain Components",
-        "weight_mt": 21.0,
-        "teu_count": 2,
-        "transport_mode": "Overland Freight",
-        "sec_source": "Detroit Automotive Supply Chain"
-      },
-      {
-        "bol_id": "BOL-AERO-2026-0908-TRK",
-        "date": "2026-09-08",
-        "shipper": "Aerostar Manufacturing Commercial Division",
-        "consignee": "PACCAR Commercial Heavy Truck Assembly",
-        "origin_port": "Romulus Logistics Hub",
-        "destination_port": "Louisville / Chicago Freight Gateway",
-        "hts_code": "8708.99.81",
-        "product_category": "Heavy Truck Chassis Brackets & Crossmembers",
-        "weight_mt": 29.4,
-        "teu_count": 4,
-        "transport_mode": "Intermodal Express",
-        "sec_source": "Commercial Vehicle Component Supply"
-      }
-    ]
-  },
-  "satellite_scenes": [
-    {
-      "facility_key": "aerostar",
-      "date": "2026-08-19",
-      "scene_id": "S2C_MSIL2A_20260819T162831_R083_T17TKG_20260819T214709",
-      "cloud_cover_pct": 34.49,
-      "quality_score": 57.8,
-      "sun_elevation": 60.0,
-      "sun_azimuth": 140.0,
-      "yard_pixel_variance": 0.1162,
-      "dock_activity_variance": 0.1255,
-      "yard_utilization_pct": 76.0,
-      "estimated_trailers_present": 28,
-      "b04_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/17/T/KG/2026/08/19/S2C_MSIL2A_20260819T162831_N0512_R083_T17TKG_20260819T214709.SAFE/GRANULE/L2A_T17TKG_A010206_20260819T163342/IMG_DATA/R10m/T17TKG_20260819T162831_B04_10m.tif",
-      "b08_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/17/T/KG/2026/08/19/S2C_MSIL2A_20260819T162831_N0512_R083_T17TKG_20260819T214709.SAFE/GRANULE/L2A_T17TKG_A010206_20260819T163342/IMG_DATA/R10m/T17TKG_20260819T162831_B08_10m.tif"
-    },
-    {
-      "facility_key": "aerostar",
-      "date": "2026-08-21",
-      "scene_id": "S2A_MSIL2A_20260821T163701_R083_T17TLG_20260822T060610",
-      "cloud_cover_pct": 3.2,
-      "quality_score": 2.1,
-      "sun_elevation": 60.0,
-      "sun_azimuth": 140.0,
-      "yard_pixel_variance": 0.1287,
-      "dock_activity_variance": 0.139,
-      "yard_utilization_pct": 76.0,
-      "estimated_trailers_present": 28,
-      "b04_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/17/T/LG/2026/08/21/S2A_MSIL2A_20260821T163701_N0512_R083_T17TLG_20260822T060610.SAFE/GRANULE/L2A_T17TLG_A058310_20260821T163703/IMG_DATA/R10m/T17TLG_20260821T163701_B04_10m.tif",
-      "b08_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/17/T/LG/2026/08/21/S2A_MSIL2A_20260821T163701_N0512_R083_T17TLG_20260822T060610.SAFE/GRANULE/L2A_T17TLG_A058310_20260821T163703/IMG_DATA/R10m/T17TLG_20260821T163701_B08_10m.tif"
-    },
-    {
-      "facility_key": "aerostar",
-      "date": "2026-08-24",
-      "scene_id": "S2B_MSIL2A_20260824T162829_R083_T17TLG_20260824T202206",
-      "cloud_cover_pct": 6.69,
-      "quality_score": 0.0,
-      "sun_elevation": 60.0,
-      "sun_azimuth": 140.0,
-      "yard_pixel_variance": 0.1273,
-      "dock_activity_variance": 0.1375,
-      "yard_utilization_pct": 76.0,
-      "estimated_trailers_present": 28,
-      "b04_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/17/T/LG/2026/08/24/S2B_MSIL2A_20260824T162829_N0512_R083_T17TLG_20260824T202206.SAFE/GRANULE/L2A_T17TLG_A049444_20260824T163251/IMG_DATA/R10m/T17TLG_20260824T162829_B04_10m.tif",
-      "b08_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/17/T/LG/2026/08/24/S2B_MSIL2A_20260824T162829_N0512_R083_T17TLG_20260824T202206.SAFE/GRANULE/L2A_T17TLG_A049444_20260824T163251/IMG_DATA/R10m/T17TLG_20260824T162829_B08_10m.tif"
-    },
-    {
-      "facility_key": "aerostar",
-      "date": "2026-08-28",
-      "scene_id": "S2A_MSIL2A_20260828T162701_R040_T17TLG_20260829T041415",
-      "cloud_cover_pct": 0.01,
-      "quality_score": 100.0,
-      "sun_elevation": 60.0,
-      "sun_azimuth": 140.0,
-      "yard_pixel_variance": 0.13,
-      "dock_activity_variance": 0.1404,
-      "yard_utilization_pct": 76.0,
-      "estimated_trailers_present": 28,
-      "b04_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/17/T/LG/2026/08/28/S2A_MSIL2A_20260828T162701_N0512_R040_T17TLG_20260829T041415.SAFE/GRANULE/L2A_T17TLG_A058410_20260828T162743/IMG_DATA/R10m/T17TLG_20260828T162701_B04_10m.tif",
-      "b08_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/17/T/LG/2026/08/28/S2A_MSIL2A_20260828T162701_N0512_R040_T17TLG_20260829T041415.SAFE/GRANULE/L2A_T17TLG_A058410_20260828T162743/IMG_DATA/R10m/T17TLG_20260828T162701_B08_10m.tif"
-    },
-    {
-      "facility_key": "aerostar",
-      "date": "2026-09-18",
-      "scene_id": "S2C_MSIL2A_20260918T162941_R083_T17TLG_20260918T194414",
-      "cloud_cover_pct": 25.82,
-      "quality_score": 0.0,
-      "sun_elevation": 60.0,
-      "sun_azimuth": 140.0,
-      "yard_pixel_variance": 0.1197,
-      "dock_activity_variance": 0.1293,
-      "yard_utilization_pct": 76.0,
-      "estimated_trailers_present": 28,
-      "b04_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/17/T/LG/2026/09/18/S2C_MSIL2A_20260918T162941_N0512_R083_T17TLG_20260918T194414.SAFE/GRANULE/L2A_T17TLG_A010635_20260918T163637/IMG_DATA/R10m/T17TLG_20260918T162941_B04_10m.tif",
-      "b08_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/17/T/LG/2026/09/18/S2C_MSIL2A_20260918T162941_N0512_R083_T17TLG_20260918T194414.SAFE/GRANULE/L2A_T17TLG_A010635_20260918T163637/IMG_DATA/R10m/T17TLG_20260918T162941_B08_10m.tif"
-    },
-    {
-      "facility_key": "aerostar",
-      "date": "2026-09-28",
-      "scene_id": "S2C_MSIL2A_20260928T163051_R083_T17TLG_20260928T200725",
-      "cloud_cover_pct": 0.78,
-      "quality_score": 3.8,
-      "sun_elevation": 60.0,
-      "sun_azimuth": 140.0,
-      "yard_pixel_variance": 0.1297,
-      "dock_activity_variance": 0.1401,
-      "yard_utilization_pct": 76.0,
-      "estimated_trailers_present": 28,
-      "b04_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/17/T/LG/2026/09/28/S2C_MSIL2A_20260928T163051_N0513_R083_T17TLG_20260928T200725.SAFE/GRANULE/L2A_T17TLG_A010778_20260928T163048/IMG_DATA/R10m/T17TLG_20260928T163051_B04_10m.tif",
-      "b08_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/17/T/LG/2026/09/28/S2C_MSIL2A_20260928T163051_N0513_R083_T17TLG_20260928T200725.SAFE/GRANULE/L2A_T17TLG_A010778_20260928T163048/IMG_DATA/R10m/T17TLG_20260928T163051_B08_10m.tif"
+    "status": "not connected",
+    "reason": "Bill-of-lading trade feeds require a licensed commercial provider key",
+    "records": [],
+    "total_weight_mt": null,
+    "total_teus": null,
+    "provenance": {
+      "source": "US Customs / Trade Manifest API",
+      "url": null,
+      "retrieved_at": "2026-10-05T05:16:33Z",
+      "observed_at": null,
+      "note": "Licensed trade manifest integration required"
     }
-  ]
+  }
 }

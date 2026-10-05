@@ -1,86 +1,154 @@
 """
-SEC EDGAR Real Telemetry Ingestion Module for Methode Electronics Inc. (NYSE: MEI / CIK: 0000065270)
+SEC EDGAR Telemetry Ingestion Module
 Queries official US Securities and Exchange Commission API (data.sec.gov)
-for real quarterly inventory, revenues, cost of goods sold, and filing metrics.
+for Methode Electronics Inc. (NYSE: MEI / CIK: 0000065270).
+
+User-Agent: Velocla Research yuvarajpremlal@gmail.com
 """
 
 import os
 import json
 import logging
+import datetime
 import requests
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
-SEC_CIK = "0000065270"  # Official CIK for METHODE ELECTRONICS INC
-SEC_SUBMISSIONS_URL = f"https://data.sec.gov/submissions/CIK{SEC_CIK}.json"
+SEC_CIK = "0000065270"  # CIK for METHODE ELECTRONICS INC
 SEC_FACTS_URL = f"https://data.sec.gov/api/xbrl/companyfacts/CIK{SEC_CIK}.json"
-HEADERS = {"User-Agent": "MethodeElectronicsIntelligence arjun@example.com"}
+HEADERS = {"User-Agent": "Velocla Research yuvarajpremlal@gmail.com"}
 
 
-def fetch_real_sec_telemetry():
+def fetch_sec_telemetry(facility_key="methode"):
     """
-    Fetch 100% real company filings and XBRL facts directly from SEC EDGAR API.
+    Fetch verified XBRL financial facts from US SEC EDGAR API.
+    For Aerostar (private company): returns null with explanation.
     """
-    logging.info(f"Querying SEC EDGAR API for CIK {SEC_CIK} (Methode Electronics Inc.)...")
-    
-    # 1. Fetch Company Submissions
-    sub_res = requests.get(SEC_SUBMISSIONS_URL, headers=HEADERS, timeout=10)
-    if sub_res.status_code != 200:
-        raise Exception(f"SEC Submissions API returned HTTP {sub_res.status_code}")
-    
-    sub_data = sub_res.json()
-    company_name = sub_data.get("name")
-    sic_desc = sub_data.get("sicDescription")
-    
-    recent_filings = sub_data.get("filings", {}).get("recent", {})
-    forms = recent_filings.get("form", [])
-    filing_dates = recent_filings.get("filingDate", [])
-    doc_nums = recent_filings.get("accessionNumber", [])
+    retrieved_at = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
-    filing_list = []
-    for f, d, acc in zip(forms, filing_dates, doc_nums):
-        if f in ["10-K", "10-Q"]:
-            acc_no_hyphen = acc.replace("-", "")
-            filing_list.append({
-                "form": f,
-                "filing_date": d,
-                "accession_number": acc,
-                "sec_url": f"https://www.sec.gov/Archives/edgar/data/65270/{acc_no_hyphen}/{acc}-index.htm"
-            })
+    if facility_key.lower() == "aerostar":
+        return {
+            "company_name": "Aerostar Manufacturing",
+            "ticker": None,
+            "cik": None,
+            "status": "Private company – no public SEC filings available",
+            "inventory": None,
+            "revenue": None,
+            "provenance": {
+                "source": "US SEC EDGAR API",
+                "url": SEC_FACTS_URL,
+                "retrieved_at": retrieved_at,
+                "observed_at": None,
+                "note": "Private entity not subject to SEC public disclosure rules"
+            }
+        }
 
-    # 2. Fetch XBRL Facts (Inventories & Revenues)
-    facts_res = requests.get(SEC_FACTS_URL, headers=HEADERS, timeout=10)
-    inventory_val = 184600000.0  # Fallback to latest reported if key varies
-    revenue_val = 285400000.0
+    try:
+        logging.info(f"Querying SEC EDGAR API for CIK {SEC_CIK} (Methode Electronics Inc.)...")
+        res = requests.get(SEC_FACTS_URL, headers=HEADERS, timeout=12)
+        if res.status_code != 200:
+            logging.error(f"SEC EDGAR API returned HTTP {res.status_code}")
+            return {
+                "company_name": "METHODE ELECTRONICS INC",
+                "ticker": "MEI",
+                "cik": SEC_CIK,
+                "status": f"Source unavailable (HTTP {res.status_code})",
+                "inventory": None,
+                "revenue": None,
+                "provenance": {
+                    "source": "US SEC EDGAR API",
+                    "url": SEC_FACTS_URL,
+                    "retrieved_at": retrieved_at,
+                    "observed_at": None
+                }
+            }
 
-    if facts_res.status_code == 200:
-        facts_data = facts_res.json()
-        us_gaap = facts_data.get("facts", {}).get("us-gaap", {})
-        
-        if "InventoryNet" in us_gaap:
-            inv_units = us_gaap["InventoryNet"]["units"].get("USD", [])
-            if inv_units:
-                inventory_val = float(inv_units[-1].get("val", inventory_val))
+        facts_data = res.json()
+        entity_name = facts_data.get("entityName", "METHODE ELECTRONICS INC")
+        gaap_facts = facts_data.get("facts", {}).get("us-gaap", {})
 
-        if "Revenues" in us_gaap:
-            rev_units = us_gaap["Revenues"]["units"].get("USD", [])
-            if rev_units:
-                revenue_val = float(rev_units[-1].get("val", revenue_val))
+        # 1. Parse Inventory (InventoryNet)
+        inventory_metric = None
+        if "InventoryNet" in gaap_facts:
+            inv_units = gaap_facts["InventoryNet"].get("units", {}).get("USD", [])
+            valid_inv = [u for u in inv_units if u.get("form") in ["10-K", "10-Q"] and u.get("end")]
+            if valid_inv:
+                valid_inv.sort(key=lambda x: x.get("end", ""))
+                latest_inv = valid_inv[-1]
+                inventory_metric = {
+                    "val": float(latest_inv["val"]),
+                    "currency": "USD",
+                    "form": latest_inv.get("form"),
+                    "period_end": latest_inv.get("end"),
+                    "accession_number": latest_inv.get("accn"),
+                    "filed_date": latest_inv.get("filed"),
+                    "provenance": {
+                        "source": "US SEC EDGAR API (us-gaap/InventoryNet)",
+                        "url": SEC_FACTS_URL,
+                        "retrieved_at": retrieved_at,
+                        "observed_at": latest_inv.get("end")
+                    }
+                }
 
-    logging.info(f"Successfully retrieved SEC EDGAR data for {company_name}: Latest Inventory = ${inventory_val:,.0f}")
+        # 2. Parse Quarterly Revenue
+        revenue_metric = None
+        rev_tag = "RevenueFromContractWithCustomerExcludingAssessedTax" if "RevenueFromContractWithCustomerExcludingAssessedTax" in gaap_facts else "Revenues"
+        if rev_tag in gaap_facts:
+            rev_units = gaap_facts[rev_tag].get("units", {}).get("USD", [])
+            valid_rev = [u for u in rev_units if u.get("form") in ["10-K", "10-Q"] and u.get("fp") in ["Q1", "Q2", "Q3", "Q4"] and u.get("end")]
+            if valid_rev:
+                valid_rev.sort(key=lambda x: x.get("end", ""))
+                latest_rev = valid_rev[-1]
+                revenue_metric = {
+                    "val": float(latest_rev["val"]),
+                    "currency": "USD",
+                    "form": latest_rev.get("form"),
+                    "period_fiscal_quarter": latest_rev.get("fp"),
+                    "period_start": latest_rev.get("start"),
+                    "period_end": latest_rev.get("end"),
+                    "accession_number": latest_rev.get("accn"),
+                    "filed_date": latest_rev.get("filed"),
+                    "provenance": {
+                        "source": f"US SEC EDGAR API (us-gaap/{rev_tag})",
+                        "url": SEC_FACTS_URL,
+                        "retrieved_at": retrieved_at,
+                        "observed_at": latest_rev.get("end")
+                    }
+                }
 
-    return {
-        "company_name": company_name,
-        "ticker": "MEI",
-        "cik": SEC_CIK,
-        "sic_description": sic_desc,
-        "latest_inventory_usd": inventory_val,
-        "latest_quarterly_revenue_usd": revenue_val,
-        "recent_sec_filings": filing_list[:8]
-    }
+        return {
+            "company_name": entity_name,
+            "ticker": "MEI",
+            "cik": SEC_CIK,
+            "status": "Available",
+            "inventory": inventory_metric,
+            "revenue": revenue_metric,
+            "provenance": {
+                "source": "US SEC EDGAR API",
+                "url": SEC_FACTS_URL,
+                "retrieved_at": retrieved_at,
+                "observed_at": latest_inv.get("end") if inventory_metric else None
+            }
+        }
+
+    except Exception as e:
+        logging.error(f"Error querying SEC EDGAR API: {e}")
+        return {
+            "company_name": "METHODE ELECTRONICS INC",
+            "ticker": "MEI",
+            "cik": SEC_CIK,
+            "status": f"Source unavailable ({e})",
+            "inventory": None,
+            "revenue": None,
+            "provenance": {
+                "source": "US SEC EDGAR API",
+                "url": SEC_FACTS_URL,
+                "retrieved_at": retrieved_at,
+                "observed_at": None
+            }
+        }
 
 
 if __name__ == "__main__":
-    sec_data = fetch_real_sec_telemetry()
-    print("Real SEC EDGAR Data:")
+    sec_data = fetch_sec_telemetry("methode")
     print(json.dumps(sec_data, indent=2))

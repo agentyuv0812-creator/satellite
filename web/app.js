@@ -1,18 +1,10 @@
 /**
- * Multi-Facility Operational Intelligence Dashboard Controller
- * Supports:
- * - Methode Electronics (Apodaca, MX)
- * - Aerostar Manufacturing (Romulus, MI)
+ * Multi-Facility Verified Telemetry Dashboard Controller
+ * Displays provenanced STAC satellite passes, verified SEC EDGAR facts,
+ * and explicit 'Not connected' states for unlinked components.
  */
 
 let appData = null;
-let timeseriesChartInstance = null;
-let shiftChartInstance = null;
-let destinationChartInstance = null;
-
-let currentPage = 1;
-const rowsPerPage = 5;
-let filteredManifests = [];
 let currentFacilityKey = "methode";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -26,10 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.getElementById("refresh-btn").addEventListener("click", triggerTelemetryRefresh);
-  document.getElementById("manifest-search").addEventListener("input", filterManifestTable);
-  document.getElementById("destination-filter").addEventListener("change", filterManifestTable);
-  document.getElementById("export-csv-btn").addEventListener("click", exportManifestCSV);
-
   loadPipelineData(currentFacilityKey);
 });
 
@@ -43,7 +31,7 @@ async function loadPipelineData(facilityKey = "methode") {
     appData = await response.json();
     renderDashboard(appData);
   } catch (err) {
-    console.error(`Failed to load pipeline data for ${facilityKey}:`, err);
+    console.error(`Failed to load telemetry for ${facilityKey}:`, err);
     document.getElementById("status-text").innerText = "Data Sync Error";
   }
 }
@@ -51,304 +39,180 @@ async function loadPipelineData(facilityKey = "methode") {
 function renderDashboard(data) {
   if (!data) return;
 
-  const kpis = data.kpis;
-  const timeseries = data.timeseries || [];
-  const manifests = data.manifests?.records || [];
+  const kpis = data.kpis || {};
+  const scenes = data.satellite_scenes || [];
   const sec = data.sec_telemetry || {};
   const meta = data.metadata?.facility_info || {};
+  const mode = data.metadata?.data_source_mode || {};
 
-  // Header & SEC Banner
-  document.getElementById("header-facility-title").innerHTML = `${meta.facility || 'Operational Intelligence'}`;
-  document.getElementById("header-facility-subtitle").innerText = `${meta.location || 'Industrial Movement Tracker'}`;
+  // Header
+  document.getElementById("header-facility-title").innerText = `${meta.facility || 'Facility Telemetry'}`;
+  document.getElementById("header-facility-subtitle").innerText = `${meta.location || 'Verified STAC & Public Registry'}`;
 
-  document.getElementById("sec-company-name").innerText = `${sec.company_name || 'FACILITY TELEMETRY'} (${sec.ticker || 'REGISTRY'})`;
-  if (sec.latest_inventory_usd) {
-    document.getElementById("sec-inv-val").innerText = `$${(sec.latest_inventory_usd / 1000000).toFixed(1)}M`;
+  // SEC EDGAR Banner
+  const secCompany = document.getElementById("sec-company-name");
+  const secInv = document.getElementById("sec-inv-val");
+  const secRev = document.getElementById("sec-rev-val");
+  const secLink = document.getElementById("sec-link");
+
+  if (currentFacilityKey === "aerostar") {
+    secCompany.innerText = "Aerostar Manufacturing (Private Entity)";
+    secInv.innerText = "No public SEC filings";
+    secRev.innerText = "Private company";
+    secLink.style.display = "none";
+  } else {
+    secCompany.innerText = `${sec.company_name || 'METHODE ELECTRONICS INC'} (CIK: 0000065270)`;
+    secLink.style.display = "inline-flex";
+    if (kpis.inventory && kpis.inventory.val) {
+      secInv.innerText = `$${(kpis.inventory.val / 1000000).toFixed(1)}M (${kpis.inventory.period_end})`;
+    } else {
+      secInv.innerText = "No data";
+    }
+    if (kpis.revenue && kpis.revenue.val) {
+      secRev.innerText = `$${(kpis.revenue.val / 1000000).toFixed(1)}M (${kpis.revenue.period_end})`;
+    } else {
+      secRev.innerText = "No data";
+    }
   }
-  if (sec.latest_quarterly_revenue_usd) {
-    document.getElementById("sec-rev-val").innerText = `$${(sec.latest_quarterly_revenue_usd / 1000000).toFixed(1)}M`;
+
+  // KPI 1: Composite Index (Disabled)
+  document.getElementById("kpi-index-val").innerText = "--";
+  document.getElementById("kpi-status-badge").innerText = "Disabled";
+  document.getElementById("kpi-status-badge").style.backgroundColor = "rgba(107, 114, 128, 0.2)";
+  document.getElementById("kpi-status-badge").style.color = "#9ca3af";
+
+  // KPI 2: Traffic (Not Connected)
+  if (kpis.gate_congestion_pct !== null && kpis.gate_congestion_pct !== undefined) {
+    document.getElementById("kpi-congestion-val").innerText = `${kpis.gate_congestion_pct.toFixed(1)}%`;
+    document.getElementById("kpi-traffic-reason").innerText = "Live TomTom Stream Active";
+  } else {
+    document.getElementById("kpi-congestion-val").innerText = "No data";
+    document.getElementById("kpi-traffic-reason").innerText = kpis.traffic_reason || "No TOMTOM_API_KEY set in environment";
   }
 
-  // 1. Top KPI Cards
-  document.getElementById("kpi-index-val").innerText = kpis.current_composite_index.toFixed(1);
-  const badge = document.getElementById("kpi-status-badge");
-  badge.innerText = kpis.status_label;
-  badge.style.backgroundColor = `${kpis.status_color}25`;
-  badge.style.color = kpis.status_color;
+  // KPI 3: Shipped Volume / Trade (Not Connected)
+  document.getElementById("kpi-tonnage-val").innerText = "No data";
 
-  const latestSub = timeseries[timeseries.length - 1]?.sub_scores || {};
-  document.getElementById("sub-traffic").innerText = latestSub.traffic_congestion_score || '--';
-  document.getElementById("sub-sat").innerText = latestSub.satellite_activity_score || '--';
-  document.getElementById("sub-trade").innerText = latestSub.export_velocity_score || '--';
-
-  document.getElementById("kpi-congestion-val").innerText = kpis.gate_congestion_pct.toFixed(1);
-  document.getElementById("kpi-speed-val").innerText = kpis.gate_avg_speed_kmh.toFixed(1);
-  document.getElementById("kpi-freeflow-val").innerText = kpis.gate_freeflow_speed_kmh.toFixed(1);
-  document.getElementById("kpi-shift-delay").innerText = timeseries[timeseries.length - 1]?.traffic?.heavy_truck_dispatch_delay_mins || '12.5';
-
-  document.getElementById("kpi-tonnage-val").innerText = kpis.trailing_30d_export_mt.toFixed(1);
-  document.getElementById("kpi-teu-val").innerText = kpis.trailing_30d_teus;
-  document.getElementById("kpi-top-port").innerText = currentFacilityKey === "aerostar" ? "Detroit Gateway" : "Laredo Land Port";
-
-  document.getElementById("kpi-sat-date").innerText = kpis.latest_satellite_revisit_date;
-  document.getElementById("kpi-cloud-val").innerText = kpis.latest_satellite_cloud_cover.toFixed(1);
-  document.getElementById("kpi-utilization-val").innerText = kpis.latest_yard_utilization_pct.toFixed(1);
-
-  // 2. Render Charts
-  renderTimeseriesChart(timeseries);
-  renderShiftProfileChart(timeseries);
-  renderDestinationChart(data.manifests?.summary?.destinations || {});
-
-  // 3. Render Manifest Table
-  filteredManifests = [...manifests];
-  filterManifestTable();
-}
-
-/* 6-Week Timeseries Chart */
-function renderTimeseriesChart(timeseries) {
-  const ctx = document.getElementById('timeseriesChart').getContext('2d');
-  if (timeseriesChartInstance) timeseriesChartInstance.destroy();
-
-  const labels = timeseries.map(t => t.date.slice(5));
-  const indexData = timeseries.map(t => t.composite_index);
-  const congestionData = timeseries.map(t => t.traffic.congestion_index);
-  const satVarianceData = timeseries.map(t => t.satellite.yard_variance * 1000);
-
-  timeseriesChartInstance = new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: labels,
-      datasets: [
-        {
-          label: 'Composite Logistics Index (0-100)',
-          data: indexData,
-          borderColor: '#38bdf8',
-          backgroundColor: 'rgba(56, 189, 248, 0.12)',
-          fill: true,
-          tension: 0.3,
-          borderWidth: 3,
-          pointRadius: 3
-        },
-        {
-          label: 'Gate Congestion Index (%)',
-          data: congestionData,
-          borderColor: '#f59e0b',
-          borderDash: [5, 5],
-          tension: 0.3,
-          borderWidth: 2,
-          pointRadius: 2
-        },
-        {
-          label: 'Staging Yard Variance (Scaled x1000)',
-          data: satVarianceData,
-          borderColor: '#10b981',
-          borderDash: [2, 2],
-          tension: 0.3,
-          borderWidth: 2,
-          pointRadius: 2
-        }
-      ]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: {
-          labels: { color: '#9ca3af', font: { family: 'Inter', size: 12 } }
-        }
-      },
-      scales: {
-        x: {
-          grid: { color: 'rgba(255,255,255,0.05)' },
-          ticks: { color: '#9ca3af', font: { family: 'Inter', size: 11 } }
-        },
-        y: {
-          min: 0,
-          max: 100,
-          grid: { color: 'rgba(255,255,255,0.05)' },
-          ticks: { color: '#9ca3af', font: { family: 'Inter', size: 11 } }
-        }
-      }
+  // KPI 4: Satellite STAC Pass
+  if (kpis.latest_satellite_revisit_date) {
+    document.getElementById("kpi-sat-date").innerText = kpis.latest_satellite_revisit_date;
+    document.getElementById("kpi-cloud-val").innerText = kpis.latest_satellite_cloud_cover !== null ? kpis.latest_satellite_cloud_cover.toFixed(1) : '--';
+    const latestScene = scenes.length > 0 ? scenes[scenes.length - 1] : {};
+    document.getElementById("kpi-nodata-val").innerText = latestScene.nodata_pixel_pct !== null && latestScene.nodata_pixel_pct !== undefined ? latestScene.nodata_pixel_pct.toFixed(1) : '--';
+    
+    if (kpis.latest_satellite_provenance) {
+      const p = kpis.latest_satellite_provenance;
+      document.getElementById("kpi-sat-source").innerHTML = `<i class="fa-solid fa-satellite"></i> Source: ${p.source} • Observed: ${p.observed_at}`;
     }
-  });
+  } else {
+    document.getElementById("kpi-sat-date").innerText = "No data";
+    document.getElementById("kpi-cloud-val").innerText = "--";
+    document.getElementById("kpi-nodata-val").innerText = "--";
+  }
+
+  // Render STAC Scenes Table
+  renderSTACTable(scenes);
+
+  // Render Provenance Summary Table
+  renderProvenanceTable(data);
 }
 
-/* Shift-Change Profile Chart */
-function renderShiftProfileChart(timeseries) {
-  const ctx = document.getElementById('shiftChart').getContext('2d');
-  if (shiftChartInstance) shiftChartInstance.destroy();
-
-  const shift6am = timeseries.map(t => t.traffic.shift_6am_congestion);
-  const shift2pm = timeseries.map(t => t.traffic.shift_2pm_congestion);
-  const shift10pm = timeseries.map(t => t.traffic.shift_10pm_congestion);
-
-  const avg6 = (shift6am.reduce((a,b)=>a+b,0)/shift6am.length).toFixed(1);
-  const avg2 = (shift2pm.reduce((a,b)=>a+b,0)/shift2pm.length).toFixed(1);
-  const avg10 = (shift10pm.reduce((a,b)=>a+b,0)/shift10pm.length).toFixed(1);
-  const avgOff = (avg6 * 0.4).toFixed(1);
-
-  shiftChartInstance = new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['Shift 1 (06:00 AM)', 'Shift 2 (02:00 PM)', 'Shift 3 (10:00 PM)', 'Inter-Shift Off-Peak'],
-      datasets: [{
-        label: 'Average Congestion Level (%)',
-        data: [avg6, avg2, avg10, avgOff],
-        backgroundColor: ['#ef4444', '#f59e0b', '#38bdf8', '#10b981'],
-        borderRadius: 8,
-        barThickness: 32
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: { display: false }
-      },
-      scales: {
-        x: {
-          grid: { display: false },
-          ticks: { color: '#9ca3af', font: { family: 'Inter', size: 11 } }
-        },
-        y: {
-          min: 0,
-          max: 100,
-          grid: { color: 'rgba(255,255,255,0.05)' },
-          ticks: { color: '#9ca3af', font: { family: 'Inter', size: 11 } }
-        }
-      }
-    }
-  });
-}
-
-/* Destination Tonnage Doughnut Chart */
-function renderDestinationChart(destinations) {
-  const ctx = document.getElementById('destinationChart').getContext('2d');
-  if (destinationChartInstance) destinationChartInstance.destroy();
-
-  const labels = Object.keys(destinations);
-  const values = Object.values(destinations);
-
-  destinationChartInstance = new Chart(ctx, {
-    type: 'doughnut',
-    data: {
-      labels: labels,
-      datasets: [{
-        data: values,
-        backgroundColor: ['#38bdf8', '#8b5cf6', '#10b981', '#f59e0b'],
-        borderWidth: 2,
-        borderColor: '#0b0f19'
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: {
-          position: 'right',
-          labels: { color: '#9ca3af', font: { family: 'Inter', size: 12 } }
-        }
-      },
-      cutout: '65%'
-    }
-  });
-}
-
-/* Manifest Datatable Logic */
-function filterManifestTable() {
-  if (!appData || !appData.manifests) return;
-
-  const searchTerm = document.getElementById("manifest-search").value.toLowerCase();
-  const destFilter = document.getElementById("destination-filter").value;
-
-  const allRecords = appData.manifests.records || [];
-
-  filteredManifests = allRecords.filter(item => {
-    const matchesSearch = 
-      item.bol_id.toLowerCase().includes(searchTerm) ||
-      item.shipper.toLowerCase().includes(searchTerm) ||
-      item.consignee.toLowerCase().includes(searchTerm) ||
-      item.hts_code.toLowerCase().includes(searchTerm) ||
-      item.product_category.toLowerCase().includes(searchTerm);
-
-    const matchesDest = (destFilter === "ALL") || (item.destination_port.includes(destFilter));
-
-    return matchesSearch && matchesDest;
-  });
-
-  currentPage = 1;
-  renderManifestTable();
-}
-
-function renderManifestTable() {
-  const tbody = document.getElementById("manifest-tbody");
+function renderSTACTable(scenes) {
+  const tbody = document.getElementById("stac-tbody");
   tbody.innerHTML = "";
 
-  const startIdx = (currentPage - 1) * rowsPerPage;
-  const endIdx = startIdx + rowsPerPage;
-  const pageItems = filteredManifests.slice(startIdx, endIdx);
-
-  if (pageItems.length === 0) {
-    tbody.innerHTML = `<tr><td colspan="9" style="text-align: center; color: var(--text-dim); padding: 24px;">No matching manifest records found.</td></tr>`;
-  } else {
-    pageItems.forEach(item => {
-      const tr = document.createElement("tr");
-      tr.innerHTML = `
-        <td style="font-family: var(--font-mono);">${item.date}</td>
-        <td><span class="code-pill">${item.bol_id}</span></td>
-        <td style="max-width: 180px; overflow: hidden; text-overflow: ellipsis;" title="${item.shipper}">${item.shipper}</td>
-        <td style="max-width: 180px; overflow: hidden; text-overflow: ellipsis;" title="${item.consignee}">${item.consignee}</td>
-        <td><span class="code-pill">${item.hts_code}</span></td>
-        <td style="max-width: 200px; overflow: hidden; text-overflow: ellipsis;" title="${item.product_category}">${item.product_category}</td>
-        <td style="font-family: var(--font-mono); font-weight: 600; color: var(--accent-cyan);">${item.weight_mt} MT</td>
-        <td style="font-family: var(--font-mono);">${item.teu_count}</td>
-        <td><span style="font-size: 11px; background: rgba(56,189,248,0.12); color: #38bdf8; padding: 3px 8px; border-radius: 4px; border: 1px solid rgba(56,189,248,0.3);">${item.sec_source || 'Registry'}</span></td>
-      `;
-      tbody.appendChild(tr);
-    });
+  if (!scenes || scenes.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: var(--text-dim); padding: 24px;">No satellite passes retrieved.</td></tr>`;
+    return;
   }
 
-  document.getElementById("table-showing-text").innerText = 
-    `Showing ${filteredManifests.length > 0 ? startIdx + 1 : 0} to ${Math.min(endIdx, filteredManifests.length)} of ${filteredManifests.length} records`;
+  scenes.forEach(s => {
+    const tr = document.createElement("tr");
+    const cloudVal = s.cloud_cover_pct !== null ? `${s.cloud_cover_pct.toFixed(1)}%` : 'N/A';
+    const nodataVal = s.nodata_pixel_pct !== null ? `${s.nodata_pixel_pct.toFixed(1)}%` : 'N/A';
+    const b04Link = s.b04_url ? `<a href="${s.b04_url}" target="_blank" class="code-pill" style="color: #38bdf8;">View Signed B04 Asset</a>` : 'N/A';
 
-  renderPaginationControls();
+    tr.innerHTML = `
+      <td style="font-family: var(--font-mono); font-weight: 600;">${s.date}</td>
+      <td><span class="code-pill">${s.scene_id}</span></td>
+      <td>${cloudVal}</td>
+      <td>${nodataVal}</td>
+      <td>${b04Link}</td>
+    `;
+    tbody.appendChild(tr);
+  });
 }
 
-function renderPaginationControls() {
-  const container = document.getElementById("pagination-controls");
-  container.innerHTML = "";
+function renderProvenanceTable(data) {
+  const tbody = document.getElementById("provenance-tbody");
+  tbody.innerHTML = "";
 
-  const totalPages = Math.ceil(filteredManifests.length / rowsPerPage);
-  if (totalPages <= 1) return;
+  const kpis = data.kpis || {};
+  const meta = data.metadata || {};
+  const mode = meta.data_source_mode || {};
 
-  for (let i = 1; i <= totalPages; i++) {
-    const btn = document.createElement("button");
-    btn.className = `page-btn ${i === currentPage ? 'active' : ''}`;
-    btn.innerText = i;
-    btn.addEventListener("click", () => {
-      currentPage = i;
-      renderManifestTable();
-    });
-    container.appendChild(btn);
-  }
-}
+  const provRows = [
+    {
+      component: "Satellite STAC Scenes",
+      endpoint: "https://planetarycomputer.microsoft.com/api/stac/v1",
+      status: mode.sentinel2_scenes === "live" ? "Connected (Live STAC)" : "Unavailable",
+      statusColor: mode.sentinel2_scenes === "live" ? "#10b981" : "#ef4444",
+      lastObserved: kpis.latest_satellite_revisit_date || "N/A",
+      retrievedAt: kpis.latest_satellite_provenance?.retrieved_at || meta.last_updated || "N/A"
+    },
+    {
+      component: "SEC EDGAR Inventory Facts",
+      endpoint: "https://data.sec.gov/api/xbrl/companyfacts/CIK0000065270.json",
+      status: kpis.inventory ? "Connected (Form 10-Q)" : "Not connected / Private entity",
+      statusColor: kpis.inventory ? "#10b981" : "#f59e0b",
+      lastObserved: kpis.inventory?.period_end || "N/A",
+      retrievedAt: kpis.inventory?.provenance?.retrieved_at || meta.last_updated || "N/A"
+    },
+    {
+      component: "SEC EDGAR Quarterly Revenue",
+      endpoint: "https://data.sec.gov/api/xbrl/companyfacts/CIK0000065270.json",
+      status: kpis.revenue ? "Connected (Form 10-Q)" : "Not connected / Private entity",
+      statusColor: kpis.revenue ? "#10b981" : "#f59e0b",
+      lastObserved: kpis.revenue?.period_end || "N/A",
+      retrievedAt: kpis.revenue?.provenance?.retrieved_at || meta.last_updated || "N/A"
+    },
+    {
+      component: "Gate Traffic Velocity",
+      endpoint: "https://api.tomtom.com/traffic/services/4/flowSegmentData",
+      status: kpis.gate_congestion_pct !== null ? "Connected (Live Stream)" : "Not connected (No TOMTOM_API_KEY)",
+      statusColor: kpis.gate_congestion_pct !== null ? "#10b981" : "#f59e0b",
+      lastObserved: kpis.gate_congestion_pct !== null ? meta.last_updated?.slice(0, 10) : "N/A",
+      retrievedAt: meta.last_updated || "N/A"
+    },
+    {
+      component: "Component Bills of Lading",
+      endpoint: "US Customs & Trade Manifest API",
+      status: "Not connected (Requires commercial provider license)",
+      statusColor: "#f59e0b",
+      lastObserved: "N/A",
+      retrievedAt: meta.last_updated || "N/A"
+    },
+    {
+      component: "Composite Activity Index",
+      endpoint: "Internal Fused Pipeline Math",
+      status: "Disabled (Awaiting minimum 2 connected live streams)",
+      statusColor: "#6b7280",
+      lastObserved: "N/A",
+      retrievedAt: meta.last_updated || "N/A"
+    }
+  ];
 
-function exportManifestCSV() {
-  if (!filteredManifests || filteredManifests.length === 0) return;
-
-  const headers = ["Date", "BoL ID", "Shipper", "Consignee", "Origin Port", "Destination Port", "HTS Code", "Product Category", "Weight MT", "TEU Count", "Source Reference"];
-  const rows = filteredManifests.map(b => [
-    b.date, b.bol_id, `"${b.shipper}"`, `"${b.consignee}"`, `"${b.origin_port}"`, `"${b.destination_port}"`, b.hts_code, `"${b.product_category}"`, b.weight_mt, b.teu_count, `"${b.sec_source || 'Registry'}"`
-  ]);
-
-  const csvContent = "data:text/csv;charset=utf-8," + [headers.join(","), ...rows.map(e => e.join(","))].join("\n");
-  const encodedUri = encodeURI(csvContent);
-  const link = document.createElement("a");
-  link.setAttribute("href", encodedUri);
-  link.setAttribute("download", `${currentFacilityKey.toUpperCase()}_Manifests_Export_${new Date().toISOString().slice(0,10)}.csv`);
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+  provRows.forEach(r => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td style="font-weight: 600;">${r.component}</td>
+      <td style="font-family: var(--font-mono); font-size: 11px;">${r.endpoint}</td>
+      <td><span style="background: ${r.statusColor}20; color: ${r.statusColor}; padding: 3px 8px; border-radius: 4px; font-weight: 600; font-size: 11px;">${r.status}</span></td>
+      <td style="font-family: var(--font-mono);">${r.lastObserved}</td>
+      <td style="font-family: var(--font-mono); font-size: 11px;">${r.retrievedAt}</td>
+    `;
+    tbody.appendChild(tr);
+  });
 }
 
 async function triggerTelemetryRefresh() {
@@ -360,7 +224,7 @@ async function triggerTelemetryRefresh() {
       await loadPipelineData(currentFacilityKey);
     }
   } catch (err) {
-    console.log("Telemetry sync fallback executed.");
+    console.log("Telemetry refresh error.");
   } finally {
     btn.innerHTML = `<i class="fa-solid fa-rotate-right"></i> Refresh Telemetry`;
   }

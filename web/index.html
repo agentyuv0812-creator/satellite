@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Operational Intelligence & Goods Movement Tracker — Multi-Facility</title>
+  <title>Operational Intelligence & Facility Telemetry</title>
   
   <!-- Google Fonts & FontAwesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,15 +21,15 @@
 </head>
 <body>
   <div class="app-container">
-    <!-- Header Navbar with Facility Selector -->
+    <!-- Header Navbar -->
     <header class="app-header">
       <div class="header-brand">
         <div class="brand-logo">
           <i class="fa-solid fa-satellite-dish"></i>
         </div>
         <div class="brand-titles">
-          <h1 id="header-facility-title">Operational Intelligence Tracker</h1>
-          <p class="subtitle" id="header-facility-subtitle">Goods Movement & Industrial Activity Pipeline</p>
+          <h1 id="header-facility-title">Facility Telemetry Tracker</h1>
+          <p class="subtitle" id="header-facility-subtitle">Verified Open Data & STAC Satellite Pipeline</p>
         </div>
       </div>
       <div class="header-actions">
@@ -44,7 +44,7 @@
 
         <div class="live-status-pill" id="live-status-pill">
           <span class="status-dot green"></span>
-          <span id="status-text">100% Real Live STAC & Registry API</span>
+          <span id="status-text">Live STAC & SEC API Connected</span>
         </div>
         <button id="refresh-btn" class="btn btn-secondary">
           <i class="fa-solid fa-rotate-right"></i> Refresh Telemetry
@@ -55,26 +55,26 @@
     <!-- Main Content Grid -->
     <main class="dashboard-content">
       
-      <!-- Real Telemetry Verified Data Banner -->
-      <section class="sec-banner glass-card">
+      <!-- SEC EDGAR Verified Data Banner -->
+      <section class="sec-banner glass-card" id="sec-banner-card">
         <div class="sec-banner-content">
-          <div class="sec-badge" id="sec-badge-label"><i class="fa-solid fa-building-columns"></i> SEC / Registry Verified</div>
+          <div class="sec-badge" id="sec-badge-label"><i class="fa-solid fa-building-columns"></i> SEC EDGAR Verified</div>
           <div class="sec-info">
             <span class="company-name" id="sec-company-name">METHODE ELECTRONICS INC (CIK: 0000065270)</span>
-            <span class="sec-meta">Inventory Val: <strong id="sec-inv-val">$184,600,000</strong></span>
-            <span class="sec-meta">• Quarterly Rev: <strong id="sec-rev-val">$285,400,000</strong></span>
+            <span class="sec-meta">Inventory (10-Q): <strong id="sec-inv-val">Loading...</strong></span>
+            <span class="sec-meta">• Q1 Revenue: <strong id="sec-rev-val">Loading...</strong></span>
           </div>
         </div>
         <div class="sec-actions">
           <a id="sec-link" href="https://www.sec.gov/edgar/browse/?CIK=0000065270" target="_blank" class="btn btn-outline btn-sm">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> Inspect Filings
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Inspect SEC EDGAR Filings
           </a>
         </div>
       </section>
 
       <!-- Top KPI Cards Grid -->
       <section class="kpi-grid">
-        <!-- KPI 1: Composite Activity Index -->
+        <!-- KPI 1: Composite Activity Index (Disabled) -->
         <div class="kpi-card glass-card composite-card">
           <div class="kpi-header">
             <span class="kpi-title">Logistics Activity Index</span>
@@ -83,29 +83,15 @@
           <div class="kpi-body">
             <div class="kpi-value-container">
               <span class="kpi-main-value" id="kpi-index-val">--</span>
-              <span class="kpi-unit">/100</span>
             </div>
-            <div class="status-badge" id="kpi-status-badge">Calculating...</div>
+            <div class="status-badge" id="kpi-status-badge">Not calculated</div>
           </div>
-          <div class="kpi-footer">
-            <div class="sub-score-bar">
-              <div class="sub-score-item">
-                <span>Traffic</span>
-                <strong id="sub-traffic">--</strong>
-              </div>
-              <div class="sub-score-item">
-                <span>Satellite</span>
-                <strong id="sub-sat">--</strong>
-              </div>
-              <div class="sub-score-item">
-                <span>Trade</span>
-                <strong id="sub-trade">--</strong>
-              </div>
-            </div>
+          <div class="kpi-footer" id="kpi-index-source">
+            <i class="fa-solid fa-info-circle"></i> Disabled until at least two live streams connect
           </div>
         </div>
 
-        <!-- KPI 2: Gate Congestion Level -->
+        <!-- KPI 2: Gate & Feeder Congestion (Live / Not Connected) -->
         <div class="kpi-card glass-card">
           <div class="kpi-header">
             <span class="kpi-title">Gate & Feeder Congestion</span>
@@ -113,21 +99,18 @@
           </div>
           <div class="kpi-body">
             <div class="kpi-value-container">
-              <span class="kpi-main-value" id="kpi-congestion-val">--</span>
-              <span class="kpi-unit">%</span>
+              <span class="kpi-main-value" id="kpi-congestion-val">No data</span>
             </div>
-            <div class="kpi-meta">
-              <span>Avg Speed: <strong id="kpi-speed-val">--</strong> km/h</span>
-              <span class="meta-separator">•</span>
-              <span>Free-flow: <strong id="kpi-freeflow-val">--</strong> km/h</span>
+            <div class="kpi-meta" id="kpi-traffic-reason">
+              No TOMTOM_API_KEY set in environment
             </div>
           </div>
-          <div class="kpi-footer">
-            <i class="fa-solid fa-clock-rotate-left"></i> Shift Peak Delays: <strong id="kpi-shift-delay">--</strong> mins
+          <div class="kpi-footer" id="kpi-traffic-source">
+            <i class="fa-solid fa-plug-circle-xmark"></i> Source: TomTom Traffic Flow API (Not connected)
           </div>
         </div>
 
-        <!-- KPI 3: Trailing Export Tonnage -->
+        <!-- KPI 3: Shipped Volume / Manifest Trade (Not Connected) -->
         <div class="kpi-card glass-card">
           <div class="kpi-header">
             <span class="kpi-title">30-Day Shipped Volume</span>
@@ -135,22 +118,21 @@
           </div>
           <div class="kpi-body">
             <div class="kpi-value-container">
-              <span class="kpi-main-value" id="kpi-tonnage-val">--</span>
-              <span class="kpi-unit">MT</span>
+              <span class="kpi-main-value" id="kpi-tonnage-val">No data</span>
             </div>
             <div class="kpi-meta">
-              <span>TEUs Container Count: <strong id="kpi-teu-val">--</strong></span>
+              Requires licensed trade manifest provider
             </div>
           </div>
-          <div class="kpi-footer">
-            <i class="fa-solid fa-location-dot"></i> Top Port: <strong id="kpi-top-port">Laredo Gateway</strong>
+          <div class="kpi-footer" id="kpi-trade-source">
+            <i class="fa-solid fa-file-invoice"></i> Source: US Customs Trade API (Not connected)
           </div>
         </div>
 
-        <!-- KPI 4: Satellite Revisit Date -->
+        <!-- KPI 4: Satellite Revisit Date (Live STAC) -->
         <div class="kpi-card glass-card">
           <div class="kpi-header">
-            <span class="kpi-title">Real Sentinel-2 Satellite Pass</span>
+            <span class="kpi-title">Sentinel-2 STAC Revisit</span>
             <i class="fa-solid fa-earth-americas kpi-icon"></i>
           </div>
           <div class="kpi-body">
@@ -160,28 +142,26 @@
             <div class="kpi-meta">
               <span>Cloud Cover: <strong id="kpi-cloud-val">--</strong>%</span>
               <span class="meta-separator">•</span>
-              <span>Yard Utilization: <strong id="kpi-utilization-val">--</strong>%</span>
+              <span>No-Data Pixels: <strong id="kpi-nodata-val">--</strong>%</span>
             </div>
           </div>
-          <div class="kpi-footer">
-            <i class="fa-solid fa-satellite"></i> Microsoft STAC API Live Stream
+          <div class="kpi-footer" id="kpi-sat-source">
+            <i class="fa-solid fa-satellite"></i> Source: Microsoft Planetary Computer STAC API
           </div>
         </div>
       </section>
 
-      <!-- Row 2: Map & Primary Timeseries Chart -->
+      <!-- Row 2: Map & STAC Scenes Table -->
       <section class="grid-row-two">
         <!-- Interactive Plant Map -->
         <div class="card glass-card map-container-card">
           <div class="card-header">
             <div class="header-title-group">
-              <h3><i class="fa-solid fa-map-location-dot"></i> <span id="map-title">Facility & Feeder Corridor Map</span></h3>
-              <p id="map-subtitle">Coordinates & Bounding Box Overlays</p>
+              <h3><i class="fa-solid fa-map-location-dot"></i> <span id="map-title">Facility Coordinates & Bounding Box</span></h3>
+              <p id="map-subtitle">Verified Geographic Coordinates & GIS Tiles</p>
             </div>
             <div class="map-layer-controls">
-              <button class="map-chip active" id="chip-all">All Overlays</button>
-              <button class="map-chip" id="chip-docks">Docks & Staging</button>
-              <button class="map-chip" id="chip-traffic">Traffic Feeders</button>
+              <button class="map-chip active" id="chip-all">Center View</button>
             </div>
           </div>
           <div class="card-body map-body">
@@ -189,99 +169,58 @@
           </div>
         </div>
 
-        <!-- 6-Week Timeseries Chart -->
+        <!-- Verified Sentinel-2 STAC Scenes Table -->
         <div class="card glass-card chart-container-card">
           <div class="card-header">
             <div class="header-title-group">
-              <h3><i class="fa-solid fa-chart-area"></i> 6-Week Rolling Logistics Activity Trend</h3>
-              <p>Comparing Composite Index against Gate Congestion & Satellite Variance</p>
+              <h3><i class="fa-solid fa-satellite"></i> Verified Sentinel-2 STAC Passes</h3>
+              <p>Live observation dates & cloud metrics from Planetary Computer STAC API</p>
             </div>
           </div>
-          <div class="card-body">
-            <canvas id="timeseriesChart"></canvas>
+          <div class="card-body p-0" style="overflow-y: auto; max-height: 380px;">
+            <table class="data-table" id="stac-table">
+              <thead>
+                <tr>
+                  <th>Observation Date</th>
+                  <th>Scene ID</th>
+                  <th>Cloud Cover</th>
+                  <th>No-Data %</th>
+                  <th>Signed Asset URL</th>
+                </tr>
+              </thead>
+              <tbody id="stac-tbody">
+                <!-- Rendered dynamically -->
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
 
-      <!-- Row 3: Shift Analysis & Trade Destination Distribution -->
-      <section class="grid-row-three">
-        <!-- Shift-Change Traffic Profile -->
-        <div class="card glass-card">
-          <div class="card-header">
-            <div class="header-title-group">
-              <h3><i class="fa-solid fa-clock"></i> Shift-Change Congestion Profile</h3>
-              <p>Profiling 06:00, 14:00 & 22:00 truck dispatch delays vs off-peak hours</p>
-            </div>
-          </div>
-          <div class="card-body">
-            <canvas id="shiftChart"></canvas>
-          </div>
-        </div>
-
-        <!-- Trade Destination Breakdown -->
-        <div class="card glass-card">
-          <div class="card-header">
-            <div class="header-title-group">
-              <h3><i class="fa-solid fa-ship"></i> Outbound Tonnage by Destination Port</h3>
-              <p>Freight & Components Logistics Breakdown</p>
-            </div>
-          </div>
-          <div class="card-body">
-            <canvas id="destinationChart"></canvas>
-          </div>
-        </div>
-      </section>
-
-      <!-- Row 4: Bills of Lading Manifest Table -->
+      <!-- Row 3: Component Connection Status Summary -->
       <section class="manifest-section">
         <div class="card glass-card">
           <div class="card-header table-header">
             <div class="header-title-group">
-              <h3><i class="fa-solid fa-file-contract"></i> Customs Manifest & Trade Filings</h3>
-              <p>Tracking cross-border dispatches and manufacturing component shipments</p>
-            </div>
-            <div class="table-actions">
-              <div class="search-box">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" id="manifest-search" placeholder="Search BoL, consignee, HTS, product..." />
-              </div>
-              <select id="destination-filter" class="custom-select">
-                <option value="ALL">All Destinations</option>
-                <option value="Laredo">Laredo Land Port</option>
-                <option value="Detroit">Detroit Gateway</option>
-                <option value="Long Beach">Long Beach / West Coast</option>
-              </select>
-              <button id="export-csv-btn" class="btn btn-outline">
-                <i class="fa-solid fa-download"></i> Export CSV
-              </button>
+              <h3><i class="fa-solid fa-shield-halved"></i> Verified Telemetry Provenance Registry</h3>
+              <p>Tracking live endpoints, observation dates, and connection status per field</p>
             </div>
           </div>
           <div class="card-body p-0">
             <div class="table-responsive">
-              <table class="data-table" id="manifest-table">
+              <table class="data-table" id="provenance-table">
                 <thead>
                   <tr>
-                    <th>Date</th>
-                    <th>BoL ID</th>
-                    <th>Shipper (Origin)</th>
-                    <th>Consignee (Destination)</th>
-                    <th>HTS Code</th>
-                    <th>Product Classification</th>
-                    <th>Weight (MT)</th>
-                    <th>TEUs</th>
-                    <th>Source Reference</th>
+                    <th>Data Component</th>
+                    <th>Source Endpoint</th>
+                    <th>Status</th>
+                    <th>Last Observation Date</th>
+                    <th>Retrieval Timestamp (UTC)</th>
                   </tr>
                 </thead>
-                <tbody id="manifest-tbody">
+                <tbody id="provenance-tbody">
                   <!-- Rendered dynamically -->
                 </tbody>
               </table>
-            </div>
-          </div>
-          <div class="card-footer table-footer">
-            <span id="table-showing-text">Showing records...</span>
-            <div class="pagination-controls" id="pagination-controls">
-              <!-- Rendered dynamically -->
             </div>
           </div>
         </div>
@@ -291,8 +230,8 @@
 
     <!-- Footer -->
     <footer class="app-footer">
-      <p>Operational Intelligence System • 100% Real Live STAC Satellite & SEC / Manufacturing Registry Data</p>
-      <p class="footer-meta">Sources: Microsoft Planetary Computer (Sentinel-2 L2A STAC API) • US SEC EDGAR & State Registries</p>
+      <p>Facility Telemetry System • Verified Data Only Policy</p>
+      <p class="footer-meta">Sources: Microsoft Planetary Computer (Sentinel-2 L2A STAC API) • US SEC EDGAR (CIK 0000065270)</p>
     </footer>
   </div>
 
